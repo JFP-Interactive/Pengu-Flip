@@ -1,0 +1,54 @@
+{
+    "name": "PenguinControls",
+    "maps": [
+        {
+            "name": "Controls",
+            "id": "ad8aaa0a-dc0b-4971-8914-27ffe8a2aa8d",
+            "actions": [
+                {
+                    "name": "Place",
+                    "type": "Button",
+                    "id": "c12101d0-60cc-4867-956c-7ff4f33ee707",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ResetRotation",
+                    "type": "Button",
+                    "id": "d7e5812e-ca57-4b2b-8708-33b334127fe4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3cf57ede-5a8c-4c9c-8b12-4120b3d1b3c6",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Place",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ab9b87f-99ff-4013-a452-e58644660539",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ResetRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

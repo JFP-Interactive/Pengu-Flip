@@ -5,6 +5,7 @@ public class StayWithLook : MonoBehaviour
     [SerializeField] private GameObject physicGameObject;
     [SerializeField] private GameObject rotationGameObject;
     [SerializeField] private Vector3 rotationOffset;
+    [SerializeField] private Vector3 positionOffset;
     [SerializeField, Range(1, 100)] private float rotationSpeed = 10f;
 
     private Quaternion _nextRotation;
@@ -16,6 +17,7 @@ public class StayWithLook : MonoBehaviour
     {
         if (rotationGameObject == null) return;
         rotationGameObject.transform.GetChild(0).rotation = Quaternion.Euler(rotationOffset);
+        rotationGameObject.transform.GetChild(0).localPosition = positionOffset;
     }
 #endif
     
@@ -34,6 +36,7 @@ public class StayWithLook : MonoBehaviour
         var selfTransform = rotationGameObject.transform;
         selfTransform.position = targetTransform.position;
         var velocity = _physicRigidbody.velocity;
+        if (velocity.magnitude < 0.1f) return;
         _nextRotation = Quaternion.LookRotation(velocity);
         selfTransform.rotation =
             Quaternion.Slerp(selfTransform.rotation, _nextRotation, Time.deltaTime * rotationSpeed);
