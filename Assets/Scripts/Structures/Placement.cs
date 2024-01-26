@@ -2,13 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Placement : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Structure currentStructure;
     [SerializeField] private float rotationSpeed = .1f;
+    [SerializeField] private Button[] buttons;
+    [SerializeField] private Structure[] structures;
+    [SerializeField] private EventSystem eventSystem;
     
     private Camera _camera;
     private float _yRotation;
@@ -17,7 +22,15 @@ public class Placement : MonoBehaviour
     private void Start()
     {
         _camera = Camera.main;
-        SetObject(currentStructure);
+        foreach (var button in buttons)
+        {
+            var structure = structures[UnityEngine.Random.Range(0, structures.Length)].gameObject.GetComponent<Structure>();
+            button.GetComponentInChildren<TMPro.TMP_Text>().text = structure.name;
+            button.onClick.AddListener(() =>
+            {
+                SetObject(structure);
+            });
+        }
     }
 
     private void FixedUpdate()
@@ -54,6 +67,7 @@ public class Placement : MonoBehaviour
     public void Place(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Canceled || currentStructure == null || !currentStructure.gameObject.activeSelf) return;
+        if (eventSystem.IsPointerOverGameObject()) return;
         currentStructure.Place();
     }
     
@@ -63,9 +77,10 @@ public class Placement : MonoBehaviour
         _yRotation = 0f;
     }
 
-    public void Cancel()
+    public void Cancel(InputAction.CallbackContext context)
     {
-        // Implement cancellation logic if necessary
+        if (currentStructure == null) return;
+        Destroy(currentStructure.gameObject);
     }
 
     public void OnDrawGizmos()

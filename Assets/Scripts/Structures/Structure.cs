@@ -16,9 +16,7 @@ public class Structure : MonoBehaviour
 
     public void Place()
     {
-        var clone = Instantiate(gameObject);
-        clone.transform.position = transform.position;
-        clone.transform.rotation = transform.rotation;
+        var clone = Instantiate(gameObject, transform.position, transform.rotation);
         var newStructure = clone.GetComponent<Structure>();
         newStructure.enabled = false;
         clone.GetComponent<Collider>().enabled = true;
