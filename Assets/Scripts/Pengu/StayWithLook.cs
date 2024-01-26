@@ -36,6 +36,7 @@ public class StayWithLook : MonoBehaviour
         var selfTransform = rotationGameObject.transform;
         selfTransform.position = targetTransform.position;
         var velocity = _physicRigidbody.velocity;
+        if (velocity.magnitude < 0.1f) return;
         _nextRotation = Quaternion.LookRotation(velocity);
         selfTransform.rotation =
             Quaternion.Slerp(selfTransform.rotation, _nextRotation, Time.deltaTime * rotationSpeed);
