@@ -29,7 +29,8 @@ public class Structure : MonoBehaviour
     public bool CheckPlaceable()
     {
         //check if another structure is in the colliders way
-        var colliders = Physics.OverlapBox(transform.position, transform.localScale / 2, transform.rotation, blockingLayer);
+        var size = GetComponent<Collider>().bounds.size;
+        var colliders = Physics.OverlapBox(transform.position, size / 2, transform.rotation, blockingLayer);
         return colliders.Length == 0;
     }
 

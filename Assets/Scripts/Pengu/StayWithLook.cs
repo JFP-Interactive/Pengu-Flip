@@ -16,7 +16,7 @@ public class StayWithLook : MonoBehaviour
     private void OnValidate()
     {
         if (rotationGameObject == null) return;
-        rotationGameObject.transform.GetChild(0).rotation = Quaternion.Euler(rotationOffset);
+        rotationGameObject.transform.GetChild(0).localRotation = Quaternion.Euler(rotationOffset);
         rotationGameObject.transform.GetChild(0).localPosition = positionOffset;
     }
 #endif
