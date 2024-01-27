@@ -275,6 +275,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5140667235474871275, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: structures.Array.data[0]
+      value: 
+      objectReference: {fileID: 606718596172646346, guid: 1d991c78fd664e046b8fc53b8fcfc8c8,
+        type: 3}
     - target: {fileID: 7508823676230273446, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
         type: 3}
       propertyPath: playerRigidBody
@@ -285,7 +291,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6586854281018514937, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
         type: 3}
-      insertIndex: 3
+      insertIndex: -1
       addedObject: {fileID: 426981}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb6ae628d25df9245bfcdb7adf5ab6f5, type: 3}
