@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2330122600312191887}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,6 +94,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground_Module_Default
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d1f48a9cfd9c10d4f9b58097b17e51c1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -129,6 +134,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4c9f7eab02aae4baf48b75290c2d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childObjects:
+  - childObject: {fileID: 6117276150412201903}
+    priority: 100
+  - childObject: {fileID: 8702047779019297453, guid: c4c11226176162d48afd80173a1447c6,
+      type: 3}
+    priority: 3
+  - childObject: {fileID: 9111444849465747056, guid: f192c16371baa444f85939d55a10e69c,
+      type: 3}
+    priority: 3
+  - childObject: {fileID: 6740966502476927445, guid: 6a5fff1d54578404ab1d822da8b808f9,
+      type: 3}
+    priority: 6
+  - childObject: {fileID: 504295059540693318, guid: daa7d5b3b8895464ca1a661b924bf42e,
+      type: 3}
+    priority: 6
+  - childObject: {fileID: 2325094489981828952, guid: 23ef7b6b43b56e2428849d4d0d2c327e,
+      type: 3}
+    priority: 6
+  - childObject: {fileID: 1189331874806325449, guid: f10a43f5ab82bab419d63a6a01565dda,
+      type: 3}
+    priority: 10
+  - childObject: {fileID: 15505732296721787, guid: d0eb1cda855c34944bea87b59d764545,
+      type: 3}
+    priority: 3
   anchorPoint: {fileID: 2330122600312191887}
 --- !u!64 &-4067176747103994563
 MeshCollider:
