@@ -683,7 +683,7 @@ MonoBehaviour:
     m_Bits: 64
   structureLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   currentStructure: {fileID: 0}
   rotationSpeed: 0.1
   buttons:
@@ -788,6 +788,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5d51e1a4-2b66-4ff3-bdef-435f15f14cec
     m_ActionName: Controls/Slow[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5140667235474871275}
+        m_TargetAssemblyTypeName: Placement, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b20ff6e7-4d0b-47b6-92e8-e58a4f55363f
+    m_ActionName: Controls/Rotate[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Controls
