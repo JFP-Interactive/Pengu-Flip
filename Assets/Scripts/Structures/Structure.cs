@@ -22,7 +22,7 @@ public class Structure : MonoBehaviour
         var newStructure = clone.GetComponent<Structure>();
         newStructure.enabled = false;
         clone.GetComponent<Collider>().enabled = true;
-        newStructure.OnPlaced();
+        StartCoroutine(newStructure.OnPlaced());
         return true;
     }
 
@@ -34,12 +34,15 @@ public class Structure : MonoBehaviour
         return colliders.Length == 0;
     }
 
-    private void OnPlaced()
+    private IEnumerator OnPlaced()
     {
         //foreach (var effect in effects)
         //{
         //    effect.Fire();
         //}
+        var target = MoveWithTarget.Instance.gameObject;
+        yield return new WaitUntil(() => Vector3.Distance(target.transform.position, transform.position) > 80f);
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmos()

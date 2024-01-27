@@ -53,6 +53,7 @@ public class ObstaclePlacer : MonoBehaviour
                 var rotation = Quaternion.FromToRotation(Vector3.up, hit.normal) * Quaternion.Euler(0, randomRotation, 0);
                 var clone = Instantiate(randomObstacle.gameObject, hit.point, rotation);
                 _obstacles.Add(clone);
+                StartCoroutine(clone.GetComponent<Obstacle>().OnPlaced(target));
             }
         }
     }
