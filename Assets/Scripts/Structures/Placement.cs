@@ -2,22 +2,41 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Placement : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask structureLayer;
     [SerializeField] private Structure currentStructure;
     [SerializeField] private float rotationSpeed = .1f;
+    [SerializeField] private List<Button> buttons;
+    [SerializeField] private Structure[] structures;
+    [SerializeField] private EventSystem eventSystem;
     
     private Camera _camera;
     private float _yRotation;
     private RaycastHit _hit;
+    private int _selectedButton;
 
     private void Start()
     {
         _camera = Camera.main;
-        SetObject(currentStructure);
+
+        var structure = structures[UnityEngine.Random.Range(0, structures.Length)].gameObject.GetComponent<Structure>();
+        buttons[0].GetComponentInChildren<TMPro.TMP_Text>().text = structure.name;
+        buttons[0].onClick.AddListener(() =>
+        {
+            _selectedButton = 0;
+            SetObject(structure);
+        });
+        
+        for (var i = 1; i < buttons.Count; i++)
+        {
+            StartCoroutine(CountToNewStructure(structures[UnityEngine.Random.Range(0, structures.Length)], buttons[i]));
+        }
     }
 
     private void FixedUpdate()
@@ -37,12 +56,29 @@ public class Placement : MonoBehaviour
     private void Update()
     {
         if (currentStructure == null) return;
-        _yRotation += Mouse.current.scroll.ReadValue().y * rotationSpeed;
-        var maxRotation = currentStructure.maxRotation;
-        _yRotation = Mathf.Clamp(_yRotation, -maxRotation, maxRotation);
+        
+        //check if placeable. if not, change color to red.
+        if (currentStructure.CheckPlaceable())
+        {
+            currentStructure.GetComponent<Renderer>().material.color = Color.white;
+        }
+        else
+        {
+            currentStructure.GetComponent<Renderer>().material.color = Color.red;
+        }
+        
         currentStructure.transform.position = _hit.point;
         currentStructure.transform.rotation = Quaternion.FromToRotation(Vector3.up, _hit.normal) * Quaternion.Euler(0, _yRotation, 0) * Quaternion.Euler(currentStructure.rotationOffset);
         currentStructure.transform.localPosition += currentStructure.transform.up * currentStructure.transform.localScale.y / 2;
+    }
+    
+    public void Rotate(InputAction.CallbackContext context)
+    {
+        if (currentStructure == null) return;
+        var maxRotation = currentStructure.maxRotation;
+        var value = context.ReadValue<float>();
+        _yRotation += value * rotationSpeed;
+        _yRotation = Mathf.Clamp(_yRotation, -maxRotation, maxRotation);
     }
 
     public void SetObject(Structure structure)
@@ -50,11 +86,37 @@ public class Placement : MonoBehaviour
         if (currentStructure != null) Destroy(currentStructure.gameObject);
         currentStructure = Instantiate(structure);
     }
+    
+    public IEnumerator CountToNewStructure(Structure structure, Button button)
+    {
+        button.onClick.RemoveAllListeners();
+        var text = button.GetComponentInChildren<TMPro.TMP_Text>();
+        var time = 5f;
+        
+        while (time > 0)
+        {
+            text.text = $"{structure.name} ({time:0.0})";
+            yield return new WaitForSeconds(0.1f);
+            time -= 0.1f;
+        }
+        
+        text.text = structure.name;
+        button.onClick.AddListener(() =>
+        {
+            _selectedButton = buttons.IndexOf(button);
+            SetObject(structure);
+        });
+    }
 
     public void Place(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Canceled || currentStructure == null || !currentStructure.gameObject.activeSelf) return;
-        currentStructure.Place();
+        if (eventSystem.IsPointerOverGameObject()) return;
+        if (currentStructure.Place())
+        {
+            currentStructure = null;
+            StartCoroutine(CountToNewStructure(structures[UnityEngine.Random.Range(0, structures.Length)], buttons[_selectedButton]));
+        }
     }
     
     public void ResetRotation(InputAction.CallbackContext context)
@@ -63,9 +125,10 @@ public class Placement : MonoBehaviour
         _yRotation = 0f;
     }
 
-    public void Cancel()
+    public void Cancel(InputAction.CallbackContext context)
     {
-        // Implement cancellation logic if necessary
+        if (currentStructure == null) return;
+        Destroy(currentStructure.gameObject);
     }
 
     public void OnDrawGizmos()
