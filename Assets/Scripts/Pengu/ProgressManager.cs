@@ -18,8 +18,13 @@ public class ProgressManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
+        ResetTemporaryValues();
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
         ResetTemporaryValues();
     }
 
