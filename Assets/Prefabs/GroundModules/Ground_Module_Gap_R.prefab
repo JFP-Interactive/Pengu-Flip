@@ -62,7 +62,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7791325437710746473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anchor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
