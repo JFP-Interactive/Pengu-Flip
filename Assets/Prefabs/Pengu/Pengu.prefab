@@ -472,8 +472,12 @@ MonoBehaviour:
   initPrefab: {fileID: 6117276150412201903, guid: 3b40b5d7abdc1cb4fbff1df3d429e35a,
     type: 3}
   initPrefabCount: 15
+  cliffBoundaryPrefab: {fileID: 0}
+  cliffBoundaryOffset: {x: -5, y: 0, z: 0}
+  cliffBoundaryRandomScalePercentage: 10
   targetObject: {fileID: 3931437741474598808}
   spawnDistanceThreshold: 100
+  startSpawnPoint: {x: 0, y: 0, z: 0}
   spawnedObjects: []
 --- !u!1 &6097590039074529146
 GameObject:

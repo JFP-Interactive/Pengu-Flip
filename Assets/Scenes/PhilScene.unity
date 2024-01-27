@@ -264,6 +264,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5136033636793434136, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+        type: 3}
+      propertyPath: cliffBoundaryPrefab
+      value: 
+      objectReference: {fileID: 7038522373784588212, guid: 7844c920080479142b551e9a39ff3f75,
+        type: 3}
+    - target: {fileID: 5136033636793434136, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+        type: 3}
+      propertyPath: cliffBoundaryOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136033636793434136, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+        type: 3}
+      propertyPath: cliffBoundaryOffset.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136033636793434136, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+        type: 3}
+      propertyPath: cliffBoundaryOffset.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136033636793434136, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+        type: 3}
+      propertyPath: cliffBoundaryRandomScalePercentage
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5168804611908667861, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
       propertyPath: m_Name
@@ -545,12 +571,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5140667235474871275, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-        type: 3}
-      propertyPath: structures.Array.data[0]
-      value: 
-      objectReference: {fileID: 606718596172646346, guid: 1d991c78fd664e046b8fc53b8fcfc8c8,
-        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
