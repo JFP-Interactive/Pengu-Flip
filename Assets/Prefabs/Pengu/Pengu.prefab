@@ -131,8 +131,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3628913576203467558}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25782713, y: -0.6588002, z: 0.3207082, w: 0.62980455}
-  m_LocalPosition: {x: 8.1, y: 6.7800007, z: 3.97}
+  m_LocalRotation: {x: 0.25782716, y: -0.65880024, z: 0.32070822, w: 0.62980455}
+  m_LocalPosition: {x: 8.1, y: 6.7800007, z: 3.9700012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 4844853431693570256}
   - component: {fileID: 5170679365164320483}
   - component: {fileID: 4808209981425235626}
+  - component: {fileID: 8443369974564130637}
   m_Layer: 8
   m_Name: Pengu
   m_TagString: Untagged
@@ -405,6 +406,28 @@ MonoBehaviour:
   rotationOffset: {x: 90, y: 0, z: 0}
   positionOffset: {x: 0, y: 0, z: -0.86}
   rotationSpeed: 10
+--- !u!114 &8443369974564130637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168804611908667861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b7c38dc83d1684e94c0cc3c0ca27ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 3931437741474598808}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 384
+  obstacles: []
+  positionOffset: {x: 0, y: 0, z: 30}
+  xLine: 5
 --- !u!1 &6097590039074529146
 GameObject:
   m_ObjectHideFlags: 0
