@@ -478,6 +478,7 @@ MonoBehaviour:
   cliffBoundaryPrefab: {fileID: 7038522373784588212, guid: 7844c920080479142b551e9a39ff3f75,
     type: 3}
   cliffBoundaryOffset: {x: 0, y: -2, z: -5}
+  cliffBoundaryOffset2: {x: 0, y: -3, z: 4.5}
   cliffBoundaryRandomScalePercentage: 40
   targetObject: {fileID: 3931437741474598808}
   spawnDistanceThreshold: 100

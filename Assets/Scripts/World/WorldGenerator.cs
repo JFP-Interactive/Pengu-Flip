@@ -15,6 +15,9 @@ public class WorldGenerator : MonoBehaviour
     private Vector3 cliffBoundaryOffset = new Vector3(0f, -2f, -5f);
 
     [SerializeField]
+    private Vector3 cliffBoundaryOffset2 = new Vector3(0f, +2f, 0f);
+
+    [SerializeField]
     private float cliffBoundaryRandomScalePercentage = 10.0f;
 
     public GameObject targetObject;
@@ -101,7 +104,10 @@ public class WorldGenerator : MonoBehaviour
 
             // Spawn CliffBoundaryPrefab as child with offset position and random scale
             GameObject cliffBoundary = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
+            GameObject cliffBoundary2 = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
             cliffBoundary.transform.localPosition = cliffBoundaryOffset;
+            cliffBoundary2.transform.localPosition = cliffBoundaryOffset2;
+            cliffBoundary2.transform.localRotation = Quaternion.Euler(294.999969f, 270.0f, 270.0f);
             ApplyRandomScale(cliffBoundary);
         }
 
@@ -117,7 +123,10 @@ public class WorldGenerator : MonoBehaviour
 
             // Spawn CliffBoundaryPrefab as child with offset position and random scale
             GameObject cliffBoundary = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
+            GameObject cliffBoundary2 = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
             cliffBoundary.transform.localPosition = cliffBoundaryOffset;
+            cliffBoundary2.transform.localPosition = cliffBoundaryOffset2;
+            cliffBoundary2.transform.localRotation = Quaternion.Euler(294.999969f, 270.0f, 270.0f);
             ApplyRandomScale(cliffBoundary);
         }
         else
@@ -130,7 +139,10 @@ public class WorldGenerator : MonoBehaviour
 
             // Spawn CliffBoundaryPrefab as child with offset position and random scale
             GameObject cliffBoundary = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
+            GameObject cliffBoundary2 = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
             cliffBoundary.transform.localPosition = cliffBoundaryOffset;
+            cliffBoundary2.transform.localPosition = cliffBoundaryOffset2;
+            cliffBoundary2.transform.localRotation = Quaternion.Euler(294.999969f, 270.0f, 270.0f);
             ApplyRandomScale(cliffBoundary);
         }
     }
