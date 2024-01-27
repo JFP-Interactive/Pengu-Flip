@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
-    bool isPaused;
+    [SerializeField] InputActionAsset inputActions;
+    private bool isPaused;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        inputActions.actionMaps[0].Disable();
         isPaused = true;
     }
 
@@ -40,6 +42,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        inputActions.actionMaps[0].Enable();
         isPaused = false;
     }
 
