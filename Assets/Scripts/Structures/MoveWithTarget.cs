@@ -8,12 +8,14 @@ public class MoveWithTarget : MonoBehaviour
     [SerializeField] private bool moveX;
     [SerializeField] private bool moveY;
     [SerializeField] private bool moveZ;
+    public static MoveWithTarget Instance { get; private set; }
     
     private Vector3 _offset;
     
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         _offset = transform.position - target.transform.position;
     }
     

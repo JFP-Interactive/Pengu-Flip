@@ -379,22 +379,7 @@ PrefabInstance:
     - target: {fileID: 646450842703011788, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 646450842703011788, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.25782716
-      objectReference: {fileID: 0}
-    - target: {fileID: 646450842703011788, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.65880024
-      objectReference: {fileID: 0}
-    - target: {fileID: 646450842703011788, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.32070822
+      value: 3.9700003
       objectReference: {fileID: 0}
     - target: {fileID: 4844853431693570256, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
@@ -450,16 +435,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pengu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: xLine
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: distanceThreshold
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
