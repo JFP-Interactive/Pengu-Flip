@@ -131,8 +131,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3628913576203467558}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25782713, y: -0.6588002, z: 0.3207082, w: 0.62980455}
-  m_LocalPosition: {x: 8.1, y: 6.7800007, z: 3.97}
+  m_LocalRotation: {x: 0.25782713, y: -0.6588002, z: 0.32070816, w: 0.62980455}
+  m_LocalPosition: {x: 8.1, y: 6.78, z: 3.9699998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -432,7 +432,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 384
   obstacles:
-  - {fileID: 3948632573565794350, guid: 957f7d9eed664d4458c72e34bf9f4dd3, type: 3}
   - {fileID: 3011270656859033709, guid: 279f3a44236698841a8e661dc1130fec, type: 3}
   - {fileID: 4802288263380172053, guid: 0e98e148fd1bbbb4dbb80b991b97c6bb, type: 3}
   - {fileID: 2216818910739875441, guid: 7ff9b57f5bbd61945ab6b05ed5445282, type: 3}
@@ -476,8 +475,14 @@ MonoBehaviour:
   initPrefab: {fileID: 6117276150412201903, guid: 3b40b5d7abdc1cb4fbff1df3d429e35a,
     type: 3}
   initPrefabCount: 15
+  cliffBoundaryPrefab: {fileID: 7038522373784588212, guid: 7844c920080479142b551e9a39ff3f75,
+    type: 3}
+  cliffBoundaryOffset: {x: 0, y: -2, z: -5}
+  cliffBoundaryOffset2: {x: 0, y: -3, z: 4.5}
+  cliffBoundaryRandomScalePercentage: 40
   targetObject: {fileID: 3931437741474598808}
   spawnDistanceThreshold: 100
+  startSpawnPoint: {x: 0, y: 0, z: 0}
   spawnedObjects: []
 --- !u!1 &6097590039074529146
 GameObject:

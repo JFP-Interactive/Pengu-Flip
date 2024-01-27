@@ -4,22 +4,36 @@ using System.Collections.Generic;
 public class WorldGenerator : MonoBehaviour
 {
     [SerializeField]
-    private GameObject initPrefab; // Array von Prefabs, die gesnapped werden sollen
+    private GameObject initPrefab;
     [SerializeField]
-    private int initPrefabCount; 
-
-    public GameObject targetObject; // Das Zielobjekt
+    private int initPrefabCount;
 
     [SerializeField]
-    private float spawnDistanceThreshold = 100.0f; // Maximale Entfernung zum Zielobjekt
+    private GameObject cliffBoundaryPrefab; 
 
     [SerializeField]
-    private List<GameObject> spawnedObjects = new List<GameObject>(); // Liste der gespawnten Objekte
+    private Vector3 cliffBoundaryOffset = new Vector3(0f, -2f, -5f);
+
+    [SerializeField]
+    private Vector3 cliffBoundaryOffset2 = new Vector3(0f, +2f, 0f);
+
+    [SerializeField]
+    private float cliffBoundaryRandomScalePercentage = 10.0f;
+
+    public GameObject targetObject;
+
+    [SerializeField]
+    private float spawnDistanceThreshold = 100.0f;
+
+    [SerializeField]
+    private Vector3 startSpawnPoint = Vector3.zero;
+
+    [SerializeField]
+    private List<GameObject> spawnedObjects = new List<GameObject>();
 
     private void Start()
     {
-        // Erstelle das anfängliche Objekt, das immer als erstes spawnt
-        for(int i = 0; i < initPrefabCount; i++)
+        for (int i = 0; i < initPrefabCount; i++)
         {
             SpawnNextObject(initPrefab);
         }
@@ -33,18 +47,15 @@ public class WorldGenerator : MonoBehaviour
         }
         else
         {
-            // Überwachen, ob das zuletzt gespawnte Objekt näher als die Schwelle ist
             GameObject lastSpawnedObject = spawnedObjects[spawnedObjects.Count - 1];
             float distanceToTarget = Vector3.Distance(lastSpawnedObject.transform.position, targetObject.transform.position);
 
             if (Mathf.Round(distanceToTarget) < spawnDistanceThreshold)
             {
-                // Wenn das letzte Objekt näher als die Schwelle ist, wählen Sie das nächste Objekt basierend auf Wahrscheinlichkeiten aus
                 SpawnNextObject();
             }
         }
 
-        // Überwachen und löschen Sie gespawnte Objekte, die außerhalb der Entfernungsschwelle sind
         for (int i = spawnedObjects.Count - 1; i >= 0; i--)
         {
             GameObject spawnedObject = spawnedObjects[i];
@@ -59,22 +70,17 @@ public class WorldGenerator : MonoBehaviour
             }
             else
             {
-                // Wenn ein Objekt bereits zerstört wurde, aus der Liste entfernen
                 spawnedObjects.RemoveAt(i);
             }
         }
     }
 
-
     private int ChooseRandomObjectIndex(List<ChildModuleInfo> possibleChildModules)
     {
         List<int> weightedIndices = new List<int>();
-
-        // Erstellen Sie eine Liste von gewichteten Indizes basierend auf den Prioritäten der ChildModuleInfo-Objekte
         int currentIndex = 0;
         foreach (ChildModuleInfo childInfo in possibleChildModules)
         {
-            // Fügen Sie den Index nur hinzu, wenn die Priorität größer als 0 ist
             if (childInfo.Priority > 0)
             {
                 for (int i = 0; i < childInfo.Priority; i++)
@@ -84,8 +90,6 @@ public class WorldGenerator : MonoBehaviour
             }
             currentIndex++;
         }
-
-        // Wählen Sie einen zufälligen Index aus der gewichteten Liste
         int randomIndex = weightedIndices[Random.Range(0, weightedIndices.Count)];
         return randomIndex;
     }
@@ -94,33 +98,61 @@ public class WorldGenerator : MonoBehaviour
     {
         if (spawnedObjects.Count == 0)
         {
-            GameObject spawnedObject = Instantiate(initPrefab, Vector3.zero, Quaternion.Euler(0, 90, 0));
+            GameObject spawnedObject = Instantiate(initPrefab, startSpawnPoint, Quaternion.Euler(0, 90, 0));
             spawnedObject.name = spawnedObject.name.Replace("(Clone)", "");
             spawnedObjects.Add(spawnedObject);
+
+            // Spawn CliffBoundaryPrefab as child with offset position and random scale
+            GameObject cliffBoundary = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
+            GameObject cliffBoundary2 = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
+            cliffBoundary.transform.localPosition = cliffBoundaryOffset;
+            cliffBoundary2.transform.localPosition = cliffBoundaryOffset2;
+            cliffBoundary2.transform.localRotation = Quaternion.Euler(294.999969f, 270.0f, 270.0f);
+            ApplyRandomScale(cliffBoundary);
         }
 
-        // Bestimmen Sie das Ground_Module, das gerade gespawnt wurde
         GameObject lastSpawnedObject = spawnedObjects[spawnedObjects.Count - 1];
         GroundModule lastGroundModule = lastSpawnedObject.GetComponent<GroundModule>();
-
-        // Bestimmen Sie die möglichen Child-Module für das gerade gespawnte Ground_Module
         List<ChildModuleInfo> possibleChildModules = lastGroundModule.ChildObjects;
 
         if (customPrefab != null)
         {
-            // Wenn ein benutzerdefiniertes Prefab übergeben wurde, spawnen Sie es zu 100%
             GameObject spawnedObject = Instantiate(customPrefab, lastGroundModule.GetAnchorPosition(), Quaternion.Euler(0, 90, 0));
             spawnedObject.name = spawnedObject.name.Replace("(Clone)", "");
             spawnedObjects.Add(spawnedObject);
+
+            // Spawn CliffBoundaryPrefab as child with offset position and random scale
+            GameObject cliffBoundary = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
+            GameObject cliffBoundary2 = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
+            cliffBoundary.transform.localPosition = cliffBoundaryOffset;
+            cliffBoundary2.transform.localPosition = cliffBoundaryOffset2;
+            cliffBoundary2.transform.localRotation = Quaternion.Euler(294.999969f, 270.0f, 270.0f);
+            ApplyRandomScale(cliffBoundary);
         }
         else
         {
-            // Wählen Sie das nächste Objekt basierend auf den Wahrscheinlichkeiten und spawnen Sie es
             int randomIndex = ChooseRandomObjectIndex(possibleChildModules);
             GameObject randomPrefab = possibleChildModules[randomIndex].childObject;
             GameObject spawnedObject = spawnedObject = Instantiate(randomPrefab, lastGroundModule.GetAnchorPosition(), Quaternion.Euler(0, 90, 0));
             spawnedObject.name = spawnedObject.name.Replace("(Clone)", "");
             spawnedObjects.Add(spawnedObject);
+
+            // Spawn CliffBoundaryPrefab as child with offset position and random scale
+            GameObject cliffBoundary = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
+            GameObject cliffBoundary2 = Instantiate(cliffBoundaryPrefab, spawnedObject.transform);
+            cliffBoundary.transform.localPosition = cliffBoundaryOffset;
+            cliffBoundary2.transform.localPosition = cliffBoundaryOffset2;
+            cliffBoundary2.transform.localRotation = Quaternion.Euler(294.999969f, 270.0f, 270.0f);
+            ApplyRandomScale(cliffBoundary);
         }
+    }
+
+    private void ApplyRandomScale(GameObject obj)
+    {
+        // Berechnen Sie den zufälligen Skalierungsfaktor basierend auf dem Prozentsatz
+        float randomScaleFactor = 1.0f + Random.Range(-cliffBoundaryRandomScalePercentage / 100.0f, cliffBoundaryRandomScalePercentage / 100.0f);
+
+        // Setzen Sie die Skalierung des Objekts
+        obj.transform.localScale *= randomScaleFactor;
     }
 }
