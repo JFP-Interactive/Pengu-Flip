@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 4181883814639851199}
   m_Layer: 8
   m_Name: Physic
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,6 +391,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicRigidbody: {fileID: 4181883814639851199}
   maxSpeed: 10
+  minSpeed: 0.5
+  deathDelay: 60
+  deathMenu: {fileID: 0}
 --- !u!114 &4808209981425235626
 MonoBehaviour:
   m_ObjectHideFlags: 0
