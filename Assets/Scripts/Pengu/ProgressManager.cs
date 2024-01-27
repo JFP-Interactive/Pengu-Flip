@@ -23,6 +23,11 @@ public class ProgressManager : MonoBehaviour
         ResetTemporaryValues();
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        ResetTemporaryValues();
+    }
+
     private void ResetTemporaryValues()
     {
         instance.feathers = 0;
