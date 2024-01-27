@@ -5,11 +5,19 @@ using UnityEngine;
 public class SpeedController : MonoBehaviour
 {
     [SerializeField] private Rigidbody physicRigidbody;
-    [SerializeField, Range(1,100)] private float maxSpeed = 10f;
+    [SerializeField, Range(1,100)] public float maxSpeed = 10f;
     [SerializeField, Range(0, 5)] private float minSpeed = 0.5f;
     [SerializeField] private int deathDelayInSeconds = 3;
     [SerializeField] GameObject deathMenu;
     private int currentDeathDelay = 0;
+    public static SpeedController Instance { get; private set; }
+    public float standardMaxSpeed = 10f;
+    
+    private void Start()
+    {
+        Instance = this;
+        standardMaxSpeed = maxSpeed;
+    }
 
     void Update()
     {

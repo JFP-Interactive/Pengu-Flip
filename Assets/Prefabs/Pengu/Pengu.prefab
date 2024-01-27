@@ -392,8 +392,9 @@ MonoBehaviour:
   physicRigidbody: {fileID: 4181883814639851199}
   maxSpeed: 10
   minSpeed: 0.5
-  deathDelay: 60
+  deathDelayInSeconds: 3
   deathMenu: {fileID: 0}
+  standardMaxSpeed: 10
 --- !u!114 &4808209981425235626
 MonoBehaviour:
   m_ObjectHideFlags: 0
