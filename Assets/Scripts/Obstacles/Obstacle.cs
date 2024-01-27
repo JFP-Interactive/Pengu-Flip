@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    public bool dontChangeRotation;
+    
     public IEnumerator OnPlaced(GameObject target)
     {
         if (target == null) yield break;

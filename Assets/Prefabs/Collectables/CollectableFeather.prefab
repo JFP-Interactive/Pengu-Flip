@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9203776371124594139}
   - component: {fileID: 2059368564099040166}
   - component: {fileID: 8055187504469976743}
+  - component: {fileID: 4182116565240348704}
   m_Layer: 7
   m_Name: CollectableFeather
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5031836547316453940}
@@ -82,6 +83,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc060a7bb40797648b0f22ac05b2ace8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4182116565240348704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5282314379868811808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23691b75d9cef8e4d9da196982de38f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6855021858638855344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113,27 +126,27 @@ PrefabInstance:
     - target: {fileID: 1942532075837255300, guid: 0644551e1564f2846bbd5c3b19543f6a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.7011936
       objectReference: {fileID: 0}
     - target: {fileID: 1942532075837255300, guid: 0644551e1564f2846bbd5c3b19543f6a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.09125581
       objectReference: {fileID: 0}
     - target: {fileID: 1942532075837255300, guid: 0644551e1564f2846bbd5c3b19543f6a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.09125581
       objectReference: {fileID: 0}
     - target: {fileID: 1942532075837255300, guid: 0644551e1564f2846bbd5c3b19543f6a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7071068
+      value: -0.7011936
       objectReference: {fileID: 0}
     - target: {fileID: 1942532075837255300, guid: 0644551e1564f2846bbd5c3b19543f6a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -14.83
       objectReference: {fileID: 0}
     - target: {fileID: 1942532075837255300, guid: 0644551e1564f2846bbd5c3b19543f6a,
         type: 3}
