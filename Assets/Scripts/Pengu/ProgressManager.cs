@@ -23,11 +23,6 @@ public class ProgressManager : MonoBehaviour
         ResetTemporaryValues();
     }
 
-    private void Update()
-    {
-        print("Fish: " + Fish + "   Feathers: " + Feathers);
-    }
-
     private void ResetTemporaryValues()
     {
         Instance.Feathers = 0;
