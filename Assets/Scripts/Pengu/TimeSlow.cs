@@ -34,6 +34,9 @@ public class TimeSlow : MonoBehaviour
     
     private void Update()
     {
+        if (Time.timeScale == 0) {
+            return;
+        }
         if (_isSlowingDown)
         {
             if (_currentSlowDownLeft <= 0)
