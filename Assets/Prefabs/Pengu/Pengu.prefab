@@ -435,7 +435,7 @@ MonoBehaviour:
   - {fileID: 7233932032364243621, guid: 64a2471ff17041d4f863652b1949c493, type: 3}
   positionOffset: {x: 0, y: 0, z: 30}
   distanceThreshold: 5
-  xLine: 3.25
+  xLine: 3
 --- !u!95 &105213914994146895
 Animator:
   serializedVersion: 5

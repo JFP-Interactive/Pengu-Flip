@@ -69,7 +69,6 @@ public class Placement : MonoBehaviour
         
         currentStructure.transform.position = _hit.point;
         currentStructure.transform.rotation = Quaternion.FromToRotation(Vector3.up, _hit.normal) * Quaternion.Euler(0, _yRotation, 0) * Quaternion.Euler(currentStructure.rotationOffset);
-        currentStructure.transform.localPosition += currentStructure.transform.up * currentStructure.transform.localScale.y / 2;
     }
     
     public void Rotate(InputAction.CallbackContext context)
