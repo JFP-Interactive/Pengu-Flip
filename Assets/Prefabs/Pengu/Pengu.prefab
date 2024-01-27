@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 4808209981425235626}
   - component: {fileID: 8443369974564130637}
   - component: {fileID: 105213914994146895}
+  - component: {fileID: 5136033636793434136}
   m_Layer: 8
   m_Name: Pengu
   m_TagString: Untagged
@@ -450,6 +451,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5136033636793434136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168804611908667861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67fc37ccddc5d964688ea053b18f50ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initPrefab: {fileID: 6117276150412201903, guid: 3b40b5d7abdc1cb4fbff1df3d429e35a,
+    type: 3}
+  initPrefabCount: 15
+  targetObject: {fileID: 3931437741474598808}
+  spawnDistanceThreshold: 100
+  spawnedObjects: []
 --- !u!1 &6097590039074529146
 GameObject:
   m_ObjectHideFlags: 0
