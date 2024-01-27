@@ -386,6 +386,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3.9700003
       objectReference: {fileID: 0}
+    - target: {fileID: 1000441773444727786, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f1927415b669a0e4a8652cc5896a8be3,
+        type: 2}
+    - target: {fileID: 3186049407959273853, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f1927415b669a0e4a8652cc5896a8be3,
+        type: 2}
     - target: {fileID: 4181883814639851199, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
       propertyPath: m_CollisionDetection
