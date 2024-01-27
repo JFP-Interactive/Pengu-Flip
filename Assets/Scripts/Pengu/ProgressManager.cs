@@ -18,7 +18,7 @@ public class ProgressManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         ResetTemporaryValues();
     }
