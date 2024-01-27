@@ -161,6 +161,9 @@ MonoBehaviour:
   - childObject: {fileID: 2013267395493884790, guid: a26d756bc9be768438389d788f6c3b48,
       type: 3}
     priority: 100
+  - childObject: {fileID: 140233636976430568, guid: 0417692f2dcb5514b9c13a7d0e9672bc,
+      type: 3}
+    priority: 6
   anchorPoint: {fileID: 2330122600312191887}
 --- !u!64 &-4067176747103994563
 MeshCollider:
