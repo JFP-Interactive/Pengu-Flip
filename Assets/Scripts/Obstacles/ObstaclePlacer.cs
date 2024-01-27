@@ -50,7 +50,7 @@ public class ObstaclePlacer : MonoBehaviour
         {
             if (Physics.OverlapBox(hit.point, randomObstacle.transform.localScale / 2, Quaternion.identity, obstacleLayer).Length == 0)
             {
-                var rotation = Quaternion.FromToRotation(Vector3.up, hit.normal) * Quaternion.Euler(0, randomRotation, 0);
+                var rotation = randomObstacle.dontChangeRotation ? Quaternion.Euler(0, randomRotation, 0) : Quaternion.FromToRotation(Vector3.up, hit.normal) * Quaternion.Euler(0, randomRotation, 0);
                 var clone = Instantiate(randomObstacle.gameObject, hit.point + randomObstacle.gameObject.transform.position, rotation);
                 _obstacles.Add(clone);
                 StartCoroutine(clone.GetComponent<Obstacle>().OnPlaced(target));
