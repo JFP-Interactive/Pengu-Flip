@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDownFactor: 0.3
-  fillSpeed: 0.1
+  fillSpeed: 0.2
   slowDownLength: 2
   slider: {fileID: 3189003814620585338}
 --- !u!114 &3819281406902435358

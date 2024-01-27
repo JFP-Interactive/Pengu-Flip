@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public IEnumerator OnPlaced(GameObject target)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (target == null) yield break;
+        yield return new WaitUntil(() => Vector3.Distance(target.transform.position, transform.position) > 80f);
+        Destroy(gameObject);
     }
 }

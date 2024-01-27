@@ -363,6 +363,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: fillSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -379,22 +384,24 @@ PrefabInstance:
     - target: {fileID: 646450842703011788, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.97
+      value: 3.9700003
       objectReference: {fileID: 0}
-    - target: {fileID: 646450842703011788, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+    - target: {fileID: 1000441773444727786, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.25782716
-      objectReference: {fileID: 0}
-    - target: {fileID: 646450842703011788, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f1927415b669a0e4a8652cc5896a8be3,
+        type: 2}
+    - target: {fileID: 3186049407959273853, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.65880024
-      objectReference: {fileID: 0}
-    - target: {fileID: 646450842703011788, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f1927415b669a0e4a8652cc5896a8be3,
+        type: 2}
+    - target: {fileID: 4181883814639851199, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.32070822
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4844853431693570256, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
@@ -450,16 +457,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pengu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: xLine
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: distanceThreshold
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
