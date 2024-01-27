@@ -83,7 +83,8 @@ public class Placement : MonoBehaviour
     public void SetObject(Structure structure)
     {
         if (currentStructure != null) Destroy(currentStructure.gameObject);
-        currentStructure = Instantiate(structure);
+        _yRotation = 0f;
+        currentStructure = Instantiate(structure, Vector3.zero, Quaternion.identity);
     }
     
     public IEnumerator CountToNewStructure(Structure structure, Button button)

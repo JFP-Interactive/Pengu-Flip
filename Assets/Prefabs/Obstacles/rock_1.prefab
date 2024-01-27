@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae69fc9ea46e076419bbcc86cd6d981c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc060a7bb40797648b0f22ac05b2ace8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontChangeRotation: 0
 --- !u!64 &699773410089475204
 MeshCollider:
   m_ObjectHideFlags: 0
