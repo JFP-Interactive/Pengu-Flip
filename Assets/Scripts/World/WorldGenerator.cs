@@ -1,54 +1,67 @@
-
 using UnityEngine;
+using System.Collections.Generic;
 
 public class WorldGenerator : MonoBehaviour
 {
     public GameObject[] prefabsToSpawn; // Array von Prefabs, die gesnapped werden sollen
-    public float spawnInterval = 1.0f; // Intervall zwischen den Spawns
+    public GameObject targetObject; // Das Zielobjekt
+    public float spawnDistanceThreshold = 30.0f; // Maximale Entfernung zum Zielobjekt
 
-    private float timer = 0.0f;
+    [SerializeField]
+    private List<GameObject> spawnedObjects = new List<GameObject>(); // Liste der gespawnten Objekte
 
     private void Start()
     {
         // Den ersten Spawn initiieren
-        int randomIndex = Random.Range(0, prefabsToSpawn.Length);
-        GameObject randomPrefab = prefabsToSpawn[randomIndex];
-        SpawnRandomObject(Vector3.zero, randomPrefab);
+        SpawnObject(Vector3.zero);
     }
 
     private void Update()
     {
-        // Überwachen der Zeit und auslösen des Spawns, wenn der Timer abgelaufen ist
-        timer += Time.deltaTime;
-        if (timer >= spawnInterval)
+        if (spawnedObjects.Count == 0)
         {
-            timer = 0.0f;
+            // Wenn keine Objekte gespawnt wurden, spawnen Sie das erste Objekt bei 0/0/0
+            SpawnObject(Vector3.zero);
+        }
+        else
+        {
+            // Überwachen, ob das zuletzt gespawnte Objekt näher als die Schwelle ist
+            GameObject lastSpawnedObject = spawnedObjects[spawnedObjects.Count - 1];
+            float distanceToTarget = Vector3.Distance(lastSpawnedObject.transform.position, targetObject.transform.position);
 
-            // Den nächsten Ankerpunkt als Position für das neue Objekt verwenden
-            Vector3 nextAnchorPoint = GetLastSpawnedObjectAnchorPosition();
+            if (distanceToTarget <= spawnDistanceThreshold)
+            {
+                // Wenn das letzte Objekt näher als die Schwelle ist, spawnen Sie ein neues Objekt am Ankerpunkt des letzten Objekts
+                SpawnObject(lastSpawnedObject.GetComponent<GroundModule>().GetAnchorPosition());
+            }
+        }
 
-            // Ein zufälliges Objekt aus dem Array auswählen und spawnen
-            int randomIndex = Random.Range(0, prefabsToSpawn.Length);
-            GameObject randomPrefab = prefabsToSpawn[randomIndex];
-            SpawnRandomObject(nextAnchorPoint, randomPrefab);
+        // Überwachen und löschen Sie gespawnte Objekte, die außerhalb der Entfernungsschwelle sind
+        for (int i = spawnedObjects.Count - 1; i >= 0; i--)
+        {
+            GameObject spawnedObject = spawnedObjects[i];
+            if (spawnedObject != null)
+            {
+                float distanceToTarget = Vector3.Distance(spawnedObject.transform.position, targetObject.transform.position);
+                if (distanceToTarget > spawnDistanceThreshold)
+                {
+                    Destroy(spawnedObject);
+                    spawnedObjects.RemoveAt(i);
+                }
+            }
+            else
+            {
+                // Wenn ein Objekt bereits zerstört wurde, aus der Liste entfernen
+                spawnedObjects.RemoveAt(i);
+            }
         }
     }
 
-    private Vector3 GetLastSpawnedObjectAnchorPosition()
+    private void SpawnObject(Vector3 position)
     {
-        GameObject[] spawnedObjects = GameObject.FindGameObjectsWithTag("lastSpawnedModule");
-        if (spawnedObjects.Length > 0)
-        {
-            GameObject lastSpawnedObject = spawnedObjects[spawnedObjects.Length - 1];
-            return lastSpawnedObject.GetComponent<GroundModule>().GetAnchorPosition();
-        }
-        return Vector3.zero;
-    }
-
-    private void SpawnRandomObject(Vector3 position, GameObject prefab)
-    {
-        GameObject spawnedObject = Instantiate(prefab, position, Quaternion.identity);
-
-        spawnedObject.tag = "lastSpawnedModule";
+        int randomIndex = Random.Range(0, prefabsToSpawn.Length);
+        GameObject randomPrefab = prefabsToSpawn[randomIndex];
+        GameObject spawnedObject = Instantiate(randomPrefab, position, Quaternion.identity);
+        spawnedObjects.Add(spawnedObject); // Gespawntes Objekt zur Liste hinzufügen
     }
 }

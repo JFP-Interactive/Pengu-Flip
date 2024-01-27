@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &209857825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209857826}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209857826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209857825}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8126098, y: -0.8452359, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540420641
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +186,11 @@ MonoBehaviour:
   prefabsToSpawn:
   - {fileID: 6117276150412201903, guid: 3b40b5d7abdc1cb4fbff1df3d429e35a, type: 3}
   - {fileID: 8702047779019297453, guid: c4c11226176162d48afd80173a1447c6, type: 3}
+  - {fileID: 9111444849465747056, guid: f192c16371baa444f85939d55a10e69c, type: 3}
   spawnInterval: 1
+  targetObject: {fileID: 209857825}
+  spawnDistanceThreshold: 30
+  spawnedObjects: []
 --- !u!4 &540420643
 Transform:
   m_ObjectHideFlags: 0
@@ -465,3 +500,4 @@ SceneRoots:
   - {fileID: 1815336370}
   - {fileID: 540420643}
   - {fileID: 1032289450}
+  - {fileID: 209857826}
