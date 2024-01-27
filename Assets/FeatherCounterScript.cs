@@ -13,8 +13,13 @@ public class FeatherCounterScript : MonoBehaviour
         text = GetComponent<TMPro.TMP_Text>();
     }
 
+    private void Start()
+    {
+        UpdateFeatherCounter(0);
+    }
+
     public void UpdateFeatherCounter(int featherCount)
     {
-        text.text = featherCount.ToString();
+        text.text = "Feathers: " + featherCount.ToString();
     }
 }

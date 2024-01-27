@@ -9,7 +9,7 @@ public class CollectableFish : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ProgressManager.Instance.Fish++;
+            ProgressManager.instance.fish++;
             Destroy(gameObject);
         }
     }

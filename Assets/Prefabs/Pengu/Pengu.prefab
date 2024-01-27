@@ -391,6 +391,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicRigidbody: {fileID: 4181883814639851199}
   maxSpeed: 10
+  minSpeed: 0.5
+  deathDelay: 60
+  deathMenu: {fileID: 0}
 --- !u!114 &4808209981425235626
 MonoBehaviour:
   m_ObjectHideFlags: 0

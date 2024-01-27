@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class CollectableFeather : MonoBehaviour
 {
+    private ProgressManager progressManager;
+    private FeatherCounterScript featherCounterScript;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            ProgressManager.Instance.Feathers++;
+            progressManager = ProgressManager.instance;
+            featherCounterScript = FeatherCounterScript.instance;
+            progressManager.feathers++;
+            featherCounterScript.UpdateFeatherCounter(progressManager.feathers);
             Destroy(gameObject);
         }
     }

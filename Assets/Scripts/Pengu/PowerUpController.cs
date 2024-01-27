@@ -7,20 +7,23 @@ using UnityEngine.InputSystem;
 public class PowerUpController : MonoBehaviour
 {
     ProgressManager progressManager;
+    FeatherCounterScript featherCounterScript;
     [SerializeField] Rigidbody playerRigidBody;
     [SerializeField] float flapHeight = 10;
 
     private void Awake()
     {
-        progressManager = ProgressManager.Instance;
-        FeatherCounterScript.instance.GetComponent<TMPro.TMP_Text>().text = progressManager.Feathers.ToString();
+        progressManager = ProgressManager.instance;
+        featherCounterScript = FeatherCounterScript.instance;
+        featherCounterScript.GetComponent<TMPro.TMP_Text>().text = progressManager.feathers.ToString();
     }
     public void UsePowerUp(InputAction.CallbackContext context)
     {
-        if (context.performed && progressManager.Feathers >= 1)
+        if (context.performed && progressManager.feathers >= 1)
         {
             playerRigidBody.velocity += Vector3.up * flapHeight;
-            progressManager.Feathers--;
+            progressManager.feathers--;
+            featherCounterScript.UpdateFeatherCounter(progressManager.feathers);
         }
     }
 }

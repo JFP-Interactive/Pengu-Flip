@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class ProgressManager : MonoBehaviour
 {
-    public static ProgressManager Instance { get; private set; }
-    public int Fish = 0;
-    public int Feathers = 0;
+    public static ProgressManager instance { get; private set; }
+    public int fish = 0;
+    public int feathers = 0;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(this);
         }
         else
@@ -25,6 +25,6 @@ public class ProgressManager : MonoBehaviour
 
     private void ResetTemporaryValues()
     {
-        Instance.Feathers = 0;
+        instance.feathers = 0;
     }
 }
