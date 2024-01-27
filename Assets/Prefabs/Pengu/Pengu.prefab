@@ -404,7 +404,7 @@ MonoBehaviour:
   physicGameObject: {fileID: 3931437741474598808}
   rotationGameObject: {fileID: 8469192467772328936}
   rotationOffset: {x: 90, y: 0, z: 0}
-  positionOffset: {x: 0, y: 0, z: -0.86}
+  positionOffset: {x: 0, y: 0, z: -0.71}
   rotationSpeed: 10
 --- !u!114 &8443369974564130637
 MonoBehaviour:
@@ -425,9 +425,10 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 384
-  obstacles: []
+  obstacles:
+  - {fileID: 3948632573565794350, guid: 957f7d9eed664d4458c72e34bf9f4dd3, type: 3}
   positionOffset: {x: 0, y: 0, z: 30}
-  xLine: 5
+  xLine: 4
 --- !u!1 &6097590039074529146
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +580,7 @@ PrefabInstance:
     - target: {fileID: 4808443332755366126, guid: 1b76c6ee0d8c07d40b4c318654728620,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.86
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 4808443332755366126, guid: 1b76c6ee0d8c07d40b4c318654728620,
         type: 3}
