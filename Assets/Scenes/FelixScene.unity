@@ -298,6 +298,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 704536191917726738, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 704536191917726738, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3411991494351043304, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
         type: 3}
       propertyPath: m_Name
@@ -426,6 +436,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pengu
       objectReference: {fileID: 0}
+    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+        type: 3}
+      propertyPath: obstacles.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+        type: 3}
+      propertyPath: obstacles.Array.data[6]
+      value: 
+      objectReference: {fileID: 8159709701468038913, guid: 0eb18b9b88a64d94687b7ed078ad7bfe,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
