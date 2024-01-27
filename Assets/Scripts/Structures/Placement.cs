@@ -67,12 +67,18 @@ public class Placement : MonoBehaviour
             currentStructure.GetComponent<Renderer>().material.color = Color.red;
         }
         
-        _yRotation += Mouse.current.scroll.ReadValue().y * rotationSpeed;
-        var maxRotation = currentStructure.maxRotation;
-        _yRotation = Mathf.Clamp(_yRotation, -maxRotation, maxRotation);
         currentStructure.transform.position = _hit.point;
         currentStructure.transform.rotation = Quaternion.FromToRotation(Vector3.up, _hit.normal) * Quaternion.Euler(0, _yRotation, 0) * Quaternion.Euler(currentStructure.rotationOffset);
         currentStructure.transform.localPosition += currentStructure.transform.up * currentStructure.transform.localScale.y / 2;
+    }
+    
+    public void Rotate(InputAction.CallbackContext context)
+    {
+        if (currentStructure == null) return;
+        var maxRotation = currentStructure.maxRotation;
+        var value = context.ReadValue<float>();
+        _yRotation += value * rotationSpeed;
+        _yRotation = Mathf.Clamp(_yRotation, -maxRotation, maxRotation);
     }
 
     public void SetObject(Structure structure)
