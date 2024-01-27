@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5528577661026913569}
   - component: {fileID: 2437193002332872409}
   - component: {fileID: -2627382491609760842}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CollectableFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc060a7bb40797648b0f22ac05b2ace8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontChangeRotation: 0
 --- !u!114 &-2627382491609760842
 MonoBehaviour:
   m_ObjectHideFlags: 0
