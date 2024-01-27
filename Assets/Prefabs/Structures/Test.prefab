@@ -120,3 +120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRotation: 45
   rotationOffset: {x: 0, y: 0, z: 0}
+  blockingLayer:
+    serializedVersion: 2
+    m_Bits: 128

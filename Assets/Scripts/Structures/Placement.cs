@@ -56,6 +56,17 @@ public class Placement : MonoBehaviour
     private void Update()
     {
         if (currentStructure == null) return;
+        
+        //check if placeable. if not, change color to red.
+        if (currentStructure.CheckPlaceable())
+        {
+            currentStructure.GetComponent<Renderer>().material.color = Color.white;
+        }
+        else
+        {
+            currentStructure.GetComponent<Renderer>().material.color = Color.red;
+        }
+        
         _yRotation += Mouse.current.scroll.ReadValue().y * rotationSpeed;
         var maxRotation = currentStructure.maxRotation;
         _yRotation = Mathf.Clamp(_yRotation, -maxRotation, maxRotation);

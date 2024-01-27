@@ -106,6 +106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRotation: 45
   rotationOffset: {x: 0, y: 90, z: 0}
+  blockingLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!64 &4667243362226373670
 MeshCollider:
   m_ObjectHideFlags: 0
