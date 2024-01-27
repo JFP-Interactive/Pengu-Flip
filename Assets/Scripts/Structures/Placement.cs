@@ -12,25 +12,30 @@ public class Placement : MonoBehaviour
     [SerializeField] private LayerMask structureLayer;
     [SerializeField] private Structure currentStructure;
     [SerializeField] private float rotationSpeed = .1f;
-    [SerializeField] private Button[] buttons;
+    [SerializeField] private List<Button> buttons;
     [SerializeField] private Structure[] structures;
     [SerializeField] private EventSystem eventSystem;
     
     private Camera _camera;
     private float _yRotation;
     private RaycastHit _hit;
+    private int _selectedButton;
 
     private void Start()
     {
         _camera = Camera.main;
-        foreach (var button in buttons)
+
+        var structure = structures[UnityEngine.Random.Range(0, structures.Length)].gameObject.GetComponent<Structure>();
+        buttons[0].GetComponentInChildren<TMPro.TMP_Text>().text = structure.name;
+        buttons[0].onClick.AddListener(() =>
         {
-            var structure = structures[UnityEngine.Random.Range(0, structures.Length)].gameObject.GetComponent<Structure>();
-            button.GetComponentInChildren<TMPro.TMP_Text>().text = structure.name;
-            button.onClick.AddListener(() =>
-            {
-                SetObject(structure);
-            });
+            _selectedButton = 0;
+            SetObject(structure);
+        });
+        
+        for (var i = 1; i < buttons.Count; i++)
+        {
+            StartCoroutine(CountToNewStructure(structures[UnityEngine.Random.Range(0, structures.Length)], buttons[i]));
         }
     }
 
@@ -64,12 +69,37 @@ public class Placement : MonoBehaviour
         if (currentStructure != null) Destroy(currentStructure.gameObject);
         currentStructure = Instantiate(structure);
     }
+    
+    public IEnumerator CountToNewStructure(Structure structure, Button button)
+    {
+        button.onClick.RemoveAllListeners();
+        var text = button.GetComponentInChildren<TMPro.TMP_Text>();
+        var time = 5f;
+        
+        while (time > 0)
+        {
+            text.text = $"{structure.name} ({time:0.0})";
+            yield return new WaitForSeconds(0.1f);
+            time -= 0.1f;
+        }
+        
+        text.text = structure.name;
+        button.onClick.AddListener(() =>
+        {
+            _selectedButton = buttons.IndexOf(button);
+            SetObject(structure);
+        });
+    }
 
     public void Place(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Canceled || currentStructure == null || !currentStructure.gameObject.activeSelf) return;
         if (eventSystem.IsPointerOverGameObject()) return;
-        currentStructure.Place();
+        if (currentStructure.Place())
+        {
+            currentStructure = null;
+            StartCoroutine(CountToNewStructure(structures[UnityEngine.Random.Range(0, structures.Length)], buttons[_selectedButton]));
+        }
     }
     
     public void ResetRotation(InputAction.CallbackContext context)
