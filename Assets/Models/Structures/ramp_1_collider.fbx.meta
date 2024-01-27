@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 774f770767dcb234b8a259b62070456f
+guid: cfb426343cb0bc442b808a45166bbebc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stylized Ice
-    second: {fileID: 2100000, guid: f09ef394a6b8d5c47896de1d614d1a3f, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
