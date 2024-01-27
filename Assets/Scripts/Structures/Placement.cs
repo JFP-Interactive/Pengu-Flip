@@ -77,6 +77,7 @@ public class Placement : MonoBehaviour
         var maxRotation = currentStructure.maxRotation;
         var value = context.ReadValue<float>();
         _yRotation += value * rotationSpeed;
+        if (maxRotation >= 180) return;
         _yRotation = Mathf.Clamp(_yRotation, -maxRotation, maxRotation);
     }
 
