@@ -94,7 +94,7 @@ public class WorldGenerator : MonoBehaviour
     {
         if (spawnedObjects.Count == 0)
         {
-            GameObject spawnedObject = Instantiate(initPrefab, Vector3.zero, Quaternion.identity);
+            GameObject spawnedObject = Instantiate(initPrefab, Vector3.zero, Quaternion.Euler(0, 90, 0));
             spawnedObject.name = spawnedObject.name.Replace("(Clone)", "");
             spawnedObjects.Add(spawnedObject);
         }
@@ -109,7 +109,7 @@ public class WorldGenerator : MonoBehaviour
         if (customPrefab != null)
         {
             // Wenn ein benutzerdefiniertes Prefab übergeben wurde, spawnen Sie es zu 100%
-            GameObject spawnedObject = Instantiate(customPrefab, lastGroundModule.GetAnchorPosition(), Quaternion.identity);
+            GameObject spawnedObject = Instantiate(customPrefab, lastGroundModule.GetAnchorPosition(), Quaternion.Euler(0, 90, 0));
             spawnedObject.name = spawnedObject.name.Replace("(Clone)", "");
             spawnedObjects.Add(spawnedObject);
         }
@@ -118,7 +118,7 @@ public class WorldGenerator : MonoBehaviour
             // Wählen Sie das nächste Objekt basierend auf den Wahrscheinlichkeiten und spawnen Sie es
             int randomIndex = ChooseRandomObjectIndex(possibleChildModules);
             GameObject randomPrefab = possibleChildModules[randomIndex].childObject;
-            GameObject spawnedObject = spawnedObject = Instantiate(randomPrefab, lastGroundModule.GetAnchorPosition(), Quaternion.identity);
+            GameObject spawnedObject = spawnedObject = Instantiate(randomPrefab, lastGroundModule.GetAnchorPosition(), Quaternion.Euler(0, 90, 0));
             spawnedObject.name = spawnedObject.name.Replace("(Clone)", "");
             spawnedObjects.Add(spawnedObject);
         }
