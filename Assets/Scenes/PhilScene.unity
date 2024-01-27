@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initPrefab: {fileID: 6117276150412201903, guid: 3b40b5d7abdc1cb4fbff1df3d429e35a,
     type: 3}
-  initPrefabCount: 1000
+  initPrefabCount: 15
   targetObject: {fileID: 79074897}
   spawnDistanceThreshold: 100
   spawnedObjects: []
