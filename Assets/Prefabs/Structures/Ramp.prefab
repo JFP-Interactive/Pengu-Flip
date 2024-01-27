@@ -108,7 +108,7 @@ MonoBehaviour:
   rotationOffset: {x: 0, y: 90, z: 0}
   blockingLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
 --- !u!64 &4667243362226373670
 MeshCollider:
   m_ObjectHideFlags: 0
