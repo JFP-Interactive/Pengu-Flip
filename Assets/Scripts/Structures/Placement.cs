@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Placement : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask structureLayer;
     [SerializeField] private Structure currentStructure;
     [SerializeField] private float rotationSpeed = .1f;
     [SerializeField] private Button[] buttons;
