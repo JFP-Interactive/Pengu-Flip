@@ -122,17 +122,5 @@ public class WorldGenerator : MonoBehaviour
             spawnedObject.name = spawnedObject.name.Replace("(Clone)", "");
             spawnedObjects.Add(spawnedObject);
         }
-
-        // Erstellen Sie eine zusammengefasste Debug-Nachricht
-        string debugMessage = "Parent-Objekt: " + lastSpawnedObject.name + "\n";
-        debugMessage += "Gespawntes Objekt: " + spawnedObjects[spawnedObjects.Count - 1].name + "\n";
-
-        foreach (ChildModuleInfo childInfo in possibleChildModules)
-        {
-            debugMessage += "Child-Objekt: " + childInfo.childObject.name + ", Priorität: " + childInfo.Priority + "\n";
-        }
-
-        // Debug-Nachricht ausgeben
-        Debug.Log(debugMessage);
     }
 }
