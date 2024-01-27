@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (physicGameObject == null) return;
         transform.LookAt(physicGameObject.transform);
-        transform.rotation = Quaternion.Euler(rotationOffset) * transform.rotation;
+        transform.localRotation = Quaternion.Euler(rotationOffset) * transform.localRotation;
         transform.position = physicGameObject.transform.position + positionOffset;
     }
 
