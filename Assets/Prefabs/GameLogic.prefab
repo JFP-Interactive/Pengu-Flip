@@ -1758,6 +1758,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b20ff6e7-4d0b-47b6-92e8-e58a4f55363f
     m_ActionName: Controls/Rotate[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5140667235474871275}
+        m_TargetAssemblyTypeName: Placement, Assembly-CSharp
+        m_MethodName: PressButton1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 158a2f79-52a0-44ff-93b7-b04fb3d4ca52
+    m_ActionName: Controls/Inv1[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5140667235474871275}
+        m_TargetAssemblyTypeName: Placement, Assembly-CSharp
+        m_MethodName: PressButton2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 54054bcd-dfa3-4fa6-b13d-1ba3e4d4cae6
+    m_ActionName: Controls/Inv2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5140667235474871275}
+        m_TargetAssemblyTypeName: Placement, Assembly-CSharp
+        m_MethodName: PressButton3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 283f28a0-67d9-4477-baca-cf5a41fbb99b
+    m_ActionName: Controls/Inv3[/Keyboard/3]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Controls
