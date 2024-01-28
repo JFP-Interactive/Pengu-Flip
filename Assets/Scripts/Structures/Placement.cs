@@ -77,7 +77,29 @@ public class Placement : MonoBehaviour
         var maxRotation = currentStructure.maxRotation;
         var value = context.ReadValue<float>();
         _yRotation += value * rotationSpeed;
+        if (maxRotation >= 180) return;
         _yRotation = Mathf.Clamp(_yRotation, -maxRotation, maxRotation);
+    }
+    
+    public void PressButton1(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed) return;
+        _selectedButton = 0;
+        SetObject(structures[0]);
+    }
+    
+    public void PressButton2(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed) return;
+        _selectedButton = 1;
+        SetObject(structures[1]);
+    }
+    
+    public void PressButton3(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Performed) return;
+        _selectedButton = 2;
+        SetObject(structures[2]);
     }
 
     public void SetObject(Structure structure)
