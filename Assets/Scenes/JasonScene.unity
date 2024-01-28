@@ -240,21 +240,6 @@ PrefabInstance:
         type: 3}
       propertyPath: volume
       value: 
-      objectReference: {fileID: 371059181}
-    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-        type: 3}
-      propertyPath: globalVolume
-      value: 
-      objectReference: {fileID: 371059181}
-    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-        type: 3}
-      propertyPath: vignetteIntensityNormal
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-        type: 3}
-      propertyPath: vignetteIntensityTimeSlow
-      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -334,11 +319,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pengu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5170679365164320483, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: deathMenu
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
