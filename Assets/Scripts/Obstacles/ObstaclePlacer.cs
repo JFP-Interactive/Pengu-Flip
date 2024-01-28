@@ -3,12 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public struct ObstacleWithPriority
+{
+    public Obstacle obstacle;
+    public int priority;
+}
+
 public class ObstaclePlacer : MonoBehaviour
 {
     [SerializeField] private GameObject target;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask obstacleLayer;
-    [SerializeField] private Obstacle[] obstacles;
+    [SerializeField] private ObstacleWithPriority[] obstacles;
     [SerializeField] private Vector3 positionOffset;
     [SerializeField] private float distanceThreshold = 10f;
     [SerializeField] private float xLine = 5f;
@@ -42,7 +49,7 @@ public class ObstaclePlacer : MonoBehaviour
 
     public void RandomObstacle()
     {
-        var randomObstacle = obstacles[UnityEngine.Random.Range(0, obstacles.Length)];
+        var randomObstacle = GetRandomObstacle();
         var randomRotation = UnityEngine.Random.Range(0, 360);
         var randomX = UnityEngine.Random.Range(-xLine, xLine);
         var position = new Vector3(randomX, target.transform.position.y + positionOffset.y, target.transform.position.z + positionOffset.z);
@@ -56,5 +63,26 @@ public class ObstaclePlacer : MonoBehaviour
                 StartCoroutine(clone.GetComponent<Obstacle>().OnPlaced(target));
             }
         }
+    }
+
+    private Obstacle GetRandomObstacle()
+    {
+        var totalPriority = 0;
+        foreach (var obstacle in obstacles)
+        {
+            totalPriority += obstacle.priority;
+        }
+        
+        var random = UnityEngine.Random.Range(0, totalPriority);
+        var current = 0;
+        foreach (var obstacle in obstacles)
+        {
+            current += obstacle.priority;
+            if (random < current)
+            {
+                return obstacle.obstacle;
+            }
+        }
+        return null;
     }
 }
