@@ -8,7 +8,9 @@ public class HighScoreManager : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text scoreText;
     [SerializeField] private TMPro.TMP_Text highScoreText;
     [SerializeField] private Transform playerTransform;
-    private int currentScore = 0;
+    private int currentWayScore = 0;
+    private int currentFishScore = 0;
+    private int currentTotalScore = 0;
     private int highScore;
 
     public static HighScoreManager instance { get; private set; }
@@ -35,13 +37,14 @@ public class HighScoreManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currentScore = Mathf.Max(currentScore, (int)playerTransform.position.z / meterPerPoint);
-        scoreText.text = currentScore.ToString();
+        currentWayScore = Mathf.Max(currentWayScore, (int)playerTransform.position.z / meterPerPoint);
+        currentTotalScore = currentWayScore + currentFishScore;
+        scoreText.text = currentTotalScore.ToString();
     }
 
     public void SetHighScore()
     {
-        highScore = Mathf.Max(highScore, currentScore);
+        highScore = Mathf.Max(highScore, currentTotalScore);
         SaveHighScore();
     }
 
@@ -57,6 +60,6 @@ public class HighScoreManager : MonoBehaviour
 
     public void GivePoints(int points)
     {
-        currentScore += points;
+        currentFishScore += points;
     }
 }
