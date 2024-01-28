@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private Slider musicVolumeSlider;
+    [SerializeField] private Slider volumeSlider;
 
     private void Start()
     {
@@ -23,17 +23,17 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeVolume()
     {
-        AudioListener.volume = musicVolumeSlider.value;
+        AudioListener.volume = volumeSlider.value;
         Save();
     }
 
     private void Load()
     {
-        musicVolumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
 
     private void Save()
     {
-        PlayerPrefs.SetFloat("musicVolume", musicVolumeSlider.value);
+        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);
     }
 }
