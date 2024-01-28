@@ -19,9 +19,12 @@ public class PhysicsEvents : MonoBehaviour
     private bool _veryLowSpeedInvoked = false;
     private float _timeInVeryLowSpeed = 0f;
     
+    public static PhysicsEvents Instance { get; private set; }
+    
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        Instance = this;
     }
     
     private void FixedUpdate()
