@@ -37,7 +37,6 @@ public class HighScoreManager : MonoBehaviour
     {
         currentScore = Mathf.Max(currentScore, (int)playerTransform.position.z / meterPerPoint);
         scoreText.text = currentScore.ToString();
-        Debug.Log(highScore);
     }
 
     public void SetHighScore()
@@ -54,5 +53,10 @@ public class HighScoreManager : MonoBehaviour
     private void SaveHighScore()
     {
         PlayerPrefs.SetInt("highScore", highScore);
+    }
+
+    public void GivePoints(int points)
+    {
+        currentScore += points;
     }
 }
