@@ -392,7 +392,6 @@ MonoBehaviour:
   maxSpeed: 12
   minSpeed: 2
   deathDelayInSeconds: 3
-  deathMenu: {fileID: 0}
   standardMaxSpeed: 10
 --- !u!114 &4808209981425235626
 MonoBehaviour:

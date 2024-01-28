@@ -20,6 +20,6 @@ public class FeatherCounterScript : MonoBehaviour
 
     public void UpdateFeatherCounter(int featherCount)
     {
-        text.text = "Feathers: " + featherCount.ToString();
+        text.text = featherCount.ToString();
     }
 }
