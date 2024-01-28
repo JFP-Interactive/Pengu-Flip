@@ -19,7 +19,7 @@ public class Placement : MonoBehaviour
     private Camera _camera;
     private float _yRotation;
     private RaycastHit _hit;
-    private int _selectedButton;
+    private int _selectedButton = -1;
 
     private void Start()
     {
@@ -56,6 +56,11 @@ public class Placement : MonoBehaviour
     private void Update()
     {
         if (currentStructure == null) return;
+        
+        if (_selectedButton >= 0 && _selectedButton < buttons.Count)
+        {
+            buttons[_selectedButton].Select();
+        }
         
         //check if placeable. if not, change color to red.
         if (currentStructure.CheckPlaceable())
