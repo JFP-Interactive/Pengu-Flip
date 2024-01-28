@@ -132,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 3628913576203467558}
   serializedVersion: 2
   m_LocalRotation: {x: 0.25782713, y: -0.6588002, z: 0.3207082, w: 0.62980455}
-  m_LocalPosition: {x: 8.1, y: 6.7800007, z: 3.97}
+  m_LocalPosition: {x: 8.1, y: 6.7800007, z: 3.9700003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -267,6 +267,9 @@ GameObject:
   - component: {fileID: 8753810736804291718}
   - component: {fileID: 780759460012755674}
   - component: {fileID: 4181883814639851199}
+  - component: {fileID: 7291209064506486656}
+  - component: {fileID: 8634436445959271298}
+  - component: {fileID: 1917377441059148208}
   m_Layer: 8
   m_Name: Physic
   m_TagString: Player
@@ -337,6 +340,106 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7291209064506486656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931437741474598808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683b531057b4dd244a001b56fc1832f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHighspeedCollision:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1917377441059148208}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: PlayRandomSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFlyingForLongTime:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8634436445959271298}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: PlayRandomSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnVeryHighSpeed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8634436445959271298}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: PlayRandomSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnVeryLowSpeed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8634436445959271298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931437741474598808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a684bb47ee2c6cb489ca37705132d87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 1a2ad12030355e748853ab35582bc27f, type: 3}
+  - {fileID: 8300000, guid: e555cafeac303a34f8222ead30100dd9, type: 3}
+  - {fileID: 8300000, guid: b6ce297601590d8459443a0a89e9b711, type: 3}
+  - {fileID: 8300000, guid: 78b0cc1d6b14b6840bd9c611c9946cc5, type: 3}
+  - {fileID: 8300000, guid: 34efd5ce412d23246b3707a07106c5ec, type: 3}
+  - {fileID: 8300000, guid: 55ae5a31feb88dd45a5c9d98c16eb54b, type: 3}
+  volume: 1
+--- !u!114 &1917377441059148208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931437741474598808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a684bb47ee2c6cb489ca37705132d87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 0d699c1da52f813429aba605caa19da9, type: 3}
+  - {fileID: 8300000, guid: 2c204cc3082875c448c7ddf2689fb12a, type: 3}
+  - {fileID: 8300000, guid: 250e99f79e8b6d54cb423bac7dfb648e, type: 3}
+  - {fileID: 8300000, guid: 8f28b58f05378b048b1d0e233ab89364, type: 3}
+  - {fileID: 8300000, guid: 14de0e39a20583348ab2f848a7f6cfee, type: 3}
+  - {fileID: 8300000, guid: 599dde34ea4d3b0459116217122e8d23, type: 3}
+  volume: 1
 --- !u!1 &5168804611908667861
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +453,8 @@ GameObject:
   - component: {fileID: 4808209981425235626}
   - component: {fileID: 8443369974564130637}
   - component: {fileID: 5136033636793434136}
+  - component: {fileID: 6909454673867294269}
+  - component: {fileID: 4546615007728329266}
   m_Layer: 8
   m_Name: Pengu
   m_TagString: Untagged
@@ -392,6 +497,24 @@ MonoBehaviour:
   maxSpeed: 12
   minSpeed: 2
   deathDelayInSeconds: 3
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6909454673867294269}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: PlayRandomSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   standardMaxSpeed: 10
 --- !u!114 &4808209981425235626
 MonoBehaviour:
@@ -450,7 +573,7 @@ MonoBehaviour:
     priority: 2
   - obstacle: {fileID: 2437193002332872409, guid: 97249efb90b8d4648a45022d3229e103,
       type: 3}
-    priority: 800
+    priority: 8
   positionOffset: {x: 0, y: 0, z: 30}
   distanceThreshold: 3
   xLine: 3.5
@@ -478,6 +601,43 @@ MonoBehaviour:
   spawnDistanceThreshold: 100
   startSpawnPoint: {x: 0, y: 0, z: 0}
   spawnedObjects: []
+--- !u!114 &6909454673867294269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168804611908667861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a684bb47ee2c6cb489ca37705132d87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: d33e66fdff02c024286ae84afdb797b6, type: 3}
+  - {fileID: 8300000, guid: 09aff0dd2db50274b844a2469e13264e, type: 3}
+  - {fileID: 8300000, guid: af9b8646fc5a5fe449f9287d19d3356e, type: 3}
+  volume: 1
+--- !u!114 &4546615007728329266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168804611908667861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a684bb47ee2c6cb489ca37705132d87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 1a2ad12030355e748853ab35582bc27f, type: 3}
+  - {fileID: 8300000, guid: e555cafeac303a34f8222ead30100dd9, type: 3}
+  - {fileID: 8300000, guid: b6ce297601590d8459443a0a89e9b711, type: 3}
+  - {fileID: 8300000, guid: 78b0cc1d6b14b6840bd9c611c9946cc5, type: 3}
+  - {fileID: 8300000, guid: 34efd5ce412d23246b3707a07106c5ec, type: 3}
+  - {fileID: 8300000, guid: 55ae5a31feb88dd45a5c9d98c16eb54b, type: 3}
+  volume: 1
 --- !u!1 &6097590039074529146
 GameObject:
   m_ObjectHideFlags: 0
