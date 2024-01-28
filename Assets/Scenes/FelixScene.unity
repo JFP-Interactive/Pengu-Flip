@@ -363,29 +363,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5140667235474871275, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-        type: 3}
-      propertyPath: structures.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5140667235474871275, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-        type: 3}
-      propertyPath: structures.Array.data[0]
-      value: 
-      objectReference: {fileID: 606718596172646346, guid: 1d991c78fd664e046b8fc53b8fcfc8c8,
-        type: 3}
-    - target: {fileID: 5140667235474871275, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-        type: 3}
-      propertyPath: structures.Array.data[1]
-      value: 
-      objectReference: {fileID: 6818459472894579306, guid: 5dc57bb13dd9d6d43b1668a0f6de2835,
-        type: 3}
-    - target: {fileID: 5140667235474871275, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-        type: 3}
-      propertyPath: structures.Array.data[2]
-      value: 
-      objectReference: {fileID: -1234689417527306968, guid: 5ceeade845fa81c4c9fe90338f898ef5,
-        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -458,94 +435,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pengu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[6]
-      value: 
-      objectReference: {fileID: 8159709701468038913, guid: 0eb18b9b88a64d94687b7ed078ad7bfe,
-        type: 3}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[0].obstacle
-      value: 
-      objectReference: {fileID: 3011270656859033709, guid: 279f3a44236698841a8e661dc1130fec,
-        type: 3}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[0].priority
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[1].obstacle
-      value: 
-      objectReference: {fileID: 4802288263380172053, guid: 0e98e148fd1bbbb4dbb80b991b97c6bb,
-        type: 3}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[1].priority
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[2].obstacle
-      value: 
-      objectReference: {fileID: 2216818910739875441, guid: 7ff9b57f5bbd61945ab6b05ed5445282,
-        type: 3}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[2].priority
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[3].obstacle
-      value: 
-      objectReference: {fileID: 7233932032364243621, guid: 64a2471ff17041d4f863652b1949c493,
-        type: 3}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[3].priority
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[4].obstacle
-      value: 
-      objectReference: {fileID: 8159709701468038913, guid: 0eb18b9b88a64d94687b7ed078ad7bfe,
-        type: 3}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[4].priority
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[5].obstacle
-      value: 
-      objectReference: {fileID: 8055187504469976743, guid: 68c5376dc38fa5c499f50bb9f45ccf08,
-        type: 3}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[5].priority
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[6].obstacle
-      value: 
-      objectReference: {fileID: 2437193002332872409, guid: 97249efb90b8d4648a45022d3229e103,
-        type: 3}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[6].priority
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

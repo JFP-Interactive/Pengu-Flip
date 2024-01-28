@@ -1633,8 +1633,8 @@ MonoBehaviour:
   - {fileID: 2175421438359722437}
   structures:
   - {fileID: 606718596172646346, guid: 1d991c78fd664e046b8fc53b8fcfc8c8, type: 3}
-  - {fileID: -1234689417527306968, guid: 5ceeade845fa81c4c9fe90338f898ef5, type: 3}
   - {fileID: 6818459472894579306, guid: 5dc57bb13dd9d6d43b1668a0f6de2835, type: 3}
+  - {fileID: -1234689417527306968, guid: 5ceeade845fa81c4c9fe90338f898ef5, type: 3}
   eventSystem: {fileID: 924839634515710405}
 --- !u!114 &4481393312569905213
 MonoBehaviour:
@@ -2966,7 +2966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1120.0002, y: 629.6631}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3960567103547255327
