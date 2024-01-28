@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bomb : MonoBehaviour
 {
     [SerializeField] private float bombStrength = 10000f;
-    [SerializeField] private ParticleSystem explosionParticles; 
-
+    [SerializeField] private ParticleSystem explosionParticles;
+    public UnityEvent BombExploded = new UnityEvent();
     private void OnTriggerEnter(Collider other)
     {
         var player = other.gameObject.GetComponent<Rigidbody>();
@@ -16,6 +17,7 @@ public class Bomb : MonoBehaviour
         var direction = player.transform.position - transform.position;
         player.AddForce(direction.normalized * bombStrength);
         player.AddForce(Vector3.up * bombStrength);
+        BombExploded.Invoke();
 
         if (explosionParticles != null)
         {
