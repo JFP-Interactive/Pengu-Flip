@@ -393,15 +393,15 @@ PrefabInstance:
       propertyPath: volume
       value: 
       objectReference: {fileID: 2007563503}
-    - target: {fileID: 5170679365164320483, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
-      propertyPath: minSpeed
-      value: 1.5
+      propertyPath: obstacles.Array.data[5].priority
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5170679365164320483, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
+    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
         type: 3}
-      propertyPath: deathDelayInSeconds
-      value: 2.5
+      propertyPath: obstacles.Array.data[6].priority
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
