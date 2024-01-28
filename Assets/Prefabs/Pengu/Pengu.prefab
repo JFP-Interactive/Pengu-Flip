@@ -499,6 +499,10 @@ MonoBehaviour:
   minSpeed: 2
   deathDelayInSeconds: 3
   standardMaxSpeed: 10
+  audioClip: {fileID: 0}
+  maxVolume: 0.5
+  minVolume: 0.1
+  pitchChangePercent: 0.1
 --- !u!114 &4808209981425235626
 MonoBehaviour:
   m_ObjectHideFlags: 0

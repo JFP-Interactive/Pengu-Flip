@@ -14,7 +14,15 @@ public class SpeedController : MonoBehaviour
     private int currentDeathDelay = 0;
     public static SpeedController Instance { get; private set; }
     public float standardMaxSpeed = 10f;
-    
+
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip; 
+    private float originalPitch;
+
+    [SerializeField, Range(0, 1)] private float maxVolume = 0.5f; // Max Lautstärke bei MaxSpeed
+    [SerializeField, Range(0, 1)] private float minVolume = 0.1f; // Min Lautstärke bei MinSpeed
+    [SerializeField, Range(-1, 1)] private float pitchChangePercent = 0.1f; // Prozentsatz der Pitch-Änderung
+
     private void Start()
     {
         Instance = this;
@@ -22,12 +30,27 @@ public class SpeedController : MonoBehaviour
         deathMenu = GameObject.Find("DeathMenu");
         deathMenu.SetActive(false);
         ingameUI = GameObject.Find("IngameMenu");
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = audioClip;
+        audioSource.loop = true;
+        audioSource.Play();
+
+        originalPitch = audioSource.pitch;
     }
 
     void Update()
     {
         if (physicRigidbody == null) return;
         var velocity = physicRigidbody.velocity;
+
+        float volume = Mathf.Lerp(minVolume, maxVolume, velocity.magnitude / maxSpeed);
+        audioSource.volume = volume;
+
+        float speedPercent = velocity.magnitude / maxSpeed;
+        float pitchChange = pitchChangePercent * speedPercent;
+        audioSource.pitch = originalPitch + pitchChange;
+
         if (velocity.magnitude > maxSpeed)
         {
             physicRigidbody.velocity = velocity.normalized * maxSpeed;
