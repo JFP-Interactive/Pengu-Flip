@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public class PhysicsEvents : MonoBehaviour
 {
-    public static UnityEvent OnHighspeedCollision = new ();
-    public static UnityEvent OnFlyingForLongTime = new ();
+    public UnityEvent OnHighspeedCollision = new ();
+    public UnityEvent OnFlyingForLongTime = new ();
     //only invoke very high and low speed events when it happens the first time
-    public static UnityEvent OnVeryHighSpeed = new ();
-    public static UnityEvent OnVeryLowSpeed = new ();
+    public UnityEvent OnVeryHighSpeed = new ();
+    public UnityEvent OnVeryLowSpeed = new ();
     
     private Rigidbody _rigidbody;
     //the time the penguin is not touchign a ground or structure

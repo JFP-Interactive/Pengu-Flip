@@ -40,8 +40,88 @@ Transform:
   - {fileID: 4833360113623064558}
   - {fileID: 7306036982784402917}
   - {fileID: 3893501989438542301}
+  - {fileID: 6200719444242393673}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &454065468341547738
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4714750412299814065}
+    m_Modifications:
+    - target: {fileID: 4671372353551044240, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_Name
+      value: Snow Hud Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.9133115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.067722
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.63965863
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.012638039
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7677909
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.03426867
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 3.945
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -259.645
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.403
+      objectReference: {fileID: 0}
+    - target: {fileID: 7396089836686500716, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 1.23
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c0b52ad0597d14f49b4dbb96f3cab964, type: 3}
+--- !u!4 &6200719444242393673 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5782704763152373907, guid: c0b52ad0597d14f49b4dbb96f3cab964,
+    type: 3}
+  m_PrefabInstance: {fileID: 454065468341547738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1612713456049308626
 PrefabInstance:
   m_ObjectHideFlags: 0
