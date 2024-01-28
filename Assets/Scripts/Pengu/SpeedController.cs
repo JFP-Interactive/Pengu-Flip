@@ -8,7 +8,9 @@ public class SpeedController : MonoBehaviour
     [SerializeField, Range(1,100)] public float maxSpeed = 10f;
     [SerializeField, Range(0, 5)] public float minSpeed = 0.5f;
     [SerializeField] private int deathDelayInSeconds = 3;
-    [SerializeField] GameObject deathMenu;
+    private GameObject deathMenu;
+    private GameObject ingameUI;
+    
     private int currentDeathDelay = 0;
     public static SpeedController Instance { get; private set; }
     public float standardMaxSpeed = 10f;
@@ -17,6 +19,9 @@ public class SpeedController : MonoBehaviour
     {
         Instance = this;
         standardMaxSpeed = maxSpeed;
+        deathMenu = GameObject.Find("DeathMenu");
+        deathMenu.SetActive(false);
+        ingameUI = GameObject.Find("IngameMenu");
     }
 
     void Update()
@@ -52,6 +57,7 @@ public class SpeedController : MonoBehaviour
         Debug.Log("Die");
         HighScoreManager.instance.SetHighScore();
         Time.timeScale = 0f;
+        ingameUI.SetActive(false);
         deathMenu.SetActive(true);
     }
 }
