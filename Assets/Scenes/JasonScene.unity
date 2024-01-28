@@ -236,6 +236,26 @@ PrefabInstance:
       propertyPath: playerRigidBody
       value: 
       objectReference: {fileID: 629375439}
+    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 371059181}
+    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 371059181}
+    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: vignetteIntensityNormal
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: vignetteIntensityTimeSlow
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
