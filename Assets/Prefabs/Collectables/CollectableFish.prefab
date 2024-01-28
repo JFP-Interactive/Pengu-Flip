@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 8633598230400128099}
+  - {fileID: 8821780319623911587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &9203776371124594139
@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd09a8997d31c1f4c8023fa504dc1fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsPerFish: 10
 --- !u!114 &2437193002332872409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
---- !u!1001 &3678898397522845391
+--- !u!1001 &4518204668506903055
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -165,9 +166,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 071bebffcd7c9474db8a897d91a783d9, type: 3}
---- !u!4 &8633598230400128099 stripped
+--- !u!4 &8821780319623911587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4962581139373591212, guid: 071bebffcd7c9474db8a897d91a783d9,
     type: 3}
-  m_PrefabInstance: {fileID: 3678898397522845391}
+  m_PrefabInstance: {fileID: 4518204668506903055}
   m_PrefabAsset: {fileID: 0}

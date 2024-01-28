@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class CollectableFish : MonoBehaviour
 {
+    [SerializeField] int pointsPerFish;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            ProgressManager.instance.fish++;
+            HighScoreManager.instance.GivePoints(pointsPerFish);
             Destroy(gameObject);
         }
     }
