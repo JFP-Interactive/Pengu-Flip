@@ -431,21 +431,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 384
   obstacles:
-  - obstacle: {fileID: 3011270656859033709, guid: 279f3a44236698841a8e661dc1130fec,
+  - obstacle: {fileID: 4869561705190989168, guid: 248c6da60604c5843996e22bc62cc5b1,
       type: 3}
-    priority: 12
-  - obstacle: {fileID: 4802288263380172053, guid: 0e98e148fd1bbbb4dbb80b991b97c6bb,
-      type: 3}
-    priority: 12
+    priority: 5
   - obstacle: {fileID: 2216818910739875441, guid: 7ff9b57f5bbd61945ab6b05ed5445282,
       type: 3}
-    priority: 12
+    priority: 40
   - obstacle: {fileID: 7233932032364243621, guid: 64a2471ff17041d4f863652b1949c493,
       type: 3}
-    priority: 12
-  - obstacle: {fileID: 8159709701468038913, guid: 0eb18b9b88a64d94687b7ed078ad7bfe,
+    priority: 40
+  - obstacle: {fileID: 3011270656859033709, guid: 279f3a44236698841a8e661dc1130fec,
       type: 3}
-    priority: 3
+    priority: 30
+  - obstacle: {fileID: 4802288263380172053, guid: 0e98e148fd1bbbb4dbb80b991b97c6bb,
+      type: 3}
+    priority: 30
   - obstacle: {fileID: 8055187504469976743, guid: 68c5376dc38fa5c499f50bb9f45ccf08,
       type: 3}
     priority: 2
