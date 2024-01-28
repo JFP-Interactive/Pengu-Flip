@@ -8,7 +8,6 @@ public class ProgressManager : MonoBehaviour
     public static ProgressManager instance { get; private set; }
     public int fish = 0;
     public int feathers = 0;
-    public int currentScore = 0;
 
     private void Awake()
     {

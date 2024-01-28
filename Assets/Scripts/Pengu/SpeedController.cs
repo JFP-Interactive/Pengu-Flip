@@ -38,13 +38,20 @@ public class SpeedController : MonoBehaviour
             currentDeathDelay++;
             if (currentDeathDelay >= deathDelayInSeconds / Time.fixedDeltaTime)
             {
-                Time.timeScale = 0f;
-                deathMenu.SetActive(true);
+                Die();
             }
         }
         else
         {
             currentDeathDelay = 0;
         }
+    }
+
+    private void Die()
+    {
+        Debug.Log("Die");
+        HighScoreManager.instance.SetHighScore();
+        Time.timeScale = 0f;
+        deathMenu.SetActive(true);
     }
 }
