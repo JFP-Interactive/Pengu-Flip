@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpeedController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SpeedController : MonoBehaviour
     [SerializeField] private int deathDelayInSeconds = 3;
     private GameObject deathMenu;
     private GameObject ingameUI;
+    [SerializeField] private UnityEvent OnDeath = new ();
+    [SerializeField] private UnityEvent OnStart = new ();
     
     private int currentDeathDelay = 0;
     public static SpeedController Instance { get; private set; }
@@ -22,6 +25,7 @@ public class SpeedController : MonoBehaviour
         deathMenu = GameObject.Find("DeathMenu");
         deathMenu.SetActive(false);
         ingameUI = GameObject.Find("IngameMenu");
+        OnStart.Invoke();
     }
 
     void Update()
@@ -54,6 +58,7 @@ public class SpeedController : MonoBehaviour
 
     private void Die()
     {
+        OnDeath.Invoke();
         HighScoreManager.instance.SetHighScore();
         Time.timeScale = 0f;
         ingameUI.SetActive(false);

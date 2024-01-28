@@ -17,6 +17,7 @@ public class PhysicsEvents : MonoBehaviour
     private bool _veryHighSpeedInvoked = false;
     //only fire if the penguin is in very low speed for 2 seconds
     private bool _veryLowSpeedInvoked = false;
+    private bool _flyingForLongTimeInvoked = false;
     private float _timeInVeryLowSpeed = 0f;
     
     public static PhysicsEvents Instance { get; private set; }
@@ -35,8 +36,8 @@ public class PhysicsEvents : MonoBehaviour
         {
             if (!_veryHighSpeedInvoked)
             {
-                OnVeryHighSpeed.Invoke();
                 _veryHighSpeedInvoked = true;
+                OnVeryHighSpeed.Invoke();
             }
         }
         else
@@ -49,8 +50,8 @@ public class PhysicsEvents : MonoBehaviour
             _timeInVeryLowSpeed += Time.fixedDeltaTime;
             if (!_veryLowSpeedInvoked && _timeInVeryLowSpeed >= 1f)
             {
-                OnVeryLowSpeed.Invoke();
                 _veryLowSpeedInvoked = true;
+                OnVeryLowSpeed.Invoke();
             }
         }
         else
@@ -65,11 +66,16 @@ public class PhysicsEvents : MonoBehaviour
             _timeFlying += Time.fixedDeltaTime;
             if (_timeFlying >= 2f)
             {
-                OnFlyingForLongTime.Invoke();
+                if (!_flyingForLongTimeInvoked)
+                {
+                    OnFlyingForLongTime.Invoke();
+                    _flyingForLongTimeInvoked = true;
+                }
             }
         }
         else
         {
+            _flyingForLongTimeInvoked = false;
             _timeFlying = 0f;
         }
     }
