@@ -314,6 +314,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4869561705190989168}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d083c0c45b3a5404b89f0186f28bc3bd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5231072542033227954}
   m_SourcePrefab: {fileID: 100100000, guid: d083c0c45b3a5404b89f0186f28bc3bd, type: 3}
 --- !u!1 &7471054987805368185 stripped
 GameObject:
@@ -372,6 +376,21 @@ MonoBehaviour:
   bombStrength: 500
   explosionParticles: {fileID: 8126210808168625149, guid: 146ee50993ec4764b965a310bf053056,
     type: 3}
+  BombExploded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5231072542033227954}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: PlayRandomSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4869561705190989168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +404,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontChangeRotation: 1
+--- !u!114 &5231072542033227954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7471054987805368185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a684bb47ee2c6cb489ca37705132d87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: c17de81feaa80e044bece874fb5b9530, type: 3}
+  volume: 1
 --- !u!4 &7846770564168205763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d083c0c45b3a5404b89f0186f28bc3bd,
