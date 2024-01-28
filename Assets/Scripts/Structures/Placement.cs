@@ -26,7 +26,7 @@ public class Placement : MonoBehaviour
         _camera = Camera.main;
 
         var structure = structures[UnityEngine.Random.Range(0, structures.Length)].gameObject.GetComponent<Structure>();
-        buttons[0].GetComponentInChildren<TMPro.TMP_Text>().text = structure.name;
+        buttons[0].GetComponentInParent<Slider>().value = 0f;
         buttons[0].onClick.AddListener(() =>
         {
             _selectedButton = 0;
@@ -89,22 +89,25 @@ public class Placement : MonoBehaviour
     public void PressButton1(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Performed) return;
+        if (buttons[0].GetComponentInParent<Slider>().value > 0f) return;
         _selectedButton = 0;
-        SetObject(structures[0]);
+        buttons[0].onClick.Invoke();
     }
     
     public void PressButton2(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Performed) return;
+        if (buttons[1].GetComponentInParent<Slider>().value > 0f) return;
         _selectedButton = 1;
-        SetObject(structures[1]);
+        buttons[1].onClick.Invoke();
     }
     
     public void PressButton3(InputAction.CallbackContext context)
     {
         if (context.phase != InputActionPhase.Performed) return;
+        if (buttons[2].GetComponentInParent<Slider>().value > 0f) return;
         _selectedButton = 2;
-        SetObject(structures[2]);
+        buttons[2].onClick.Invoke();
     }
 
     public void SetObject(Structure structure)
@@ -117,17 +120,21 @@ public class Placement : MonoBehaviour
     public IEnumerator CountToNewStructure(Structure structure, Button button)
     {
         button.onClick.RemoveAllListeners();
-        var text = button.GetComponentInChildren<TMPro.TMP_Text>();
+        currentStructure = null;
+        EventSystem.current.SetSelectedGameObject(null);
+        _selectedButton = -1;
+        var slider = button.GetComponentInParent<Slider>();
         var time = 5f;
         
         while (time > 0)
         {
-            text.text = $"{structure.name} ({time:0.0})";
+            slider.value = time / 5f;
             yield return new WaitForSeconds(0.1f);
             time -= 0.1f;
         }
         
-        text.text = structure.name;
+        slider.value = 0f;
+        
         button.onClick.AddListener(() =>
         {
             _selectedButton = buttons.IndexOf(button);
