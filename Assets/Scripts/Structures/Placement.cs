@@ -146,6 +146,7 @@ public class Placement : MonoBehaviour
     {
         if (context.phase != InputActionPhase.Canceled || currentStructure == null || !currentStructure.gameObject.activeSelf) return;
         if (eventSystem.IsPointerOverGameObject()) return;
+        if (currentStructure.GetComponent<Renderer>().material.color == Color.red) return;
         if (currentStructure.Place())
         {
             currentStructure = null;

@@ -19,6 +19,7 @@ public class Structure : MonoBehaviour
     {
         if (!CheckPlaceable()) return false;
         var clone = Instantiate(gameObject, transform.position, transform.rotation);
+        GetComponent<Renderer>().material.color = Color.white;
         var newStructure = clone.GetComponent<Structure>();
         newStructure.enabled = false;
         clone.GetComponent<Collider>().enabled = true;
