@@ -121,3 +121,4 @@ MonoBehaviour:
   blockingLayer:
     serializedVersion: 2
     m_Bits: 384
+  icon: {fileID: 21300000, guid: b67da6213b5f5c6449dca13b9c5c54a2, type: 3}

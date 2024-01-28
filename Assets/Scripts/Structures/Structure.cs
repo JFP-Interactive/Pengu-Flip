@@ -9,6 +9,7 @@ public class Structure : MonoBehaviour
     [SerializeField, Range(0, 180)] public float maxRotation = 45f;
     [SerializeField] public Vector3 rotationOffset;
     [SerializeField] private LayerMask blockingLayer;
+    [SerializeField] public Sprite icon;
 
     private void OnValidate()
     {

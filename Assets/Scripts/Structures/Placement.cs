@@ -27,6 +27,7 @@ public class Placement : MonoBehaviour
 
         var structure = structures[UnityEngine.Random.Range(0, structures.Length)].gameObject.GetComponent<Structure>();
         buttons[0].GetComponentInParent<Slider>().value = 0f;
+        buttons[0].GetComponentInParent<Image>().sprite = structure.icon;
         buttons[0].onClick.AddListener(() =>
         {
             _selectedButton = 0;
@@ -124,6 +125,7 @@ public class Placement : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         _selectedButton = -1;
         var slider = button.GetComponentInParent<Slider>();
+        button.GetComponentInParent<Image>().sprite = structure.icon;
         var time = 5f;
         
         while (time > 0)

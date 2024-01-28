@@ -452,8 +452,8 @@ MonoBehaviour:
       type: 3}
     priority: 8
   positionOffset: {x: 0, y: 0, z: 30}
-  distanceThreshold: 5
-  xLine: 3
+  distanceThreshold: 3
+  xLine: 3.5
 --- !u!114 &5136033636793434136
 MonoBehaviour:
   m_ObjectHideFlags: 0

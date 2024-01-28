@@ -488,11 +488,6 @@ PrefabInstance:
       propertyPath: playerRigidBody
       value: 
       objectReference: {fileID: 612019215}
-    - target: {fileID: 8457652810183746627, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
