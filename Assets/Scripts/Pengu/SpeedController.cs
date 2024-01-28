@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class SpeedController : MonoBehaviour
 {
     [SerializeField] private Rigidbody physicRigidbody;
     [SerializeField, Range(1,100)] public float maxSpeed = 10f;
     [SerializeField, Range(0, 5)] public float minSpeed = 0.5f;
-    [SerializeField] private int deathDelayInSeconds = 3;
+    [SerializeField] private float deathDelayInSeconds = 3;
+    [SerializeField] private Volume volume;
     private GameObject deathMenu;
     private GameObject ingameUI;
+    private Vignette vignette;
+    private Color vignetteColorOriginal;
     
     private int currentDeathDelay = 0;
     public static SpeedController Instance { get; private set; }
@@ -22,6 +27,8 @@ public class SpeedController : MonoBehaviour
         deathMenu = GameObject.Find("DeathMenu");
         deathMenu.SetActive(false);
         ingameUI = GameObject.Find("IngameMenu");
+        vignette = (Vignette)volume.profile.components[2];
+        vignetteColorOriginal = vignette.color.value;
     }
 
     void Update()
@@ -40,6 +47,7 @@ public class SpeedController : MonoBehaviour
         var velocity = physicRigidbody.velocity;
         if (velocity.magnitude <= minSpeed)
         {
+            vignette.color.value = Color.red;
             currentDeathDelay++;
             if (currentDeathDelay >= deathDelayInSeconds / Time.fixedDeltaTime)
             {
@@ -49,6 +57,7 @@ public class SpeedController : MonoBehaviour
         else
         {
             currentDeathDelay = 0;
+            vignette.color.value = vignetteColorOriginal;
         }
     }
 
