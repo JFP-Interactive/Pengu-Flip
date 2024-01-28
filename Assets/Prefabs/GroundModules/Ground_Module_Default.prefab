@@ -154,7 +154,7 @@ MonoBehaviour:
     priority: 6
   - childObject: {fileID: 1189331874806325449, guid: f10a43f5ab82bab419d63a6a01565dda,
       type: 3}
-    priority: 5
+    priority: 8
   - childObject: {fileID: 15505732296721787, guid: d0eb1cda855c34944bea87b59d764545,
       type: 3}
     priority: 3
