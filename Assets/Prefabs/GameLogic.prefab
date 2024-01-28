@@ -1871,7 +1871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meterPerPoint: 10
   scoreText: {fileID: 450417493155468098}
-  highScoreText: {fileID: 0}
+  highScoreText: {fileID: 8381670357126524972}
   playerTransform: {fileID: 0}
 --- !u!1 &2202418072904868142
 GameObject:
