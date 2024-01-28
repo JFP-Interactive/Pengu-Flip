@@ -123,12 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &426980 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5863980126377476680, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
-    type: 3}
-  m_PrefabInstance: {fileID: 234123245}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &234123245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,11 +201,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6404331475925028607, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404331475925028607, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763018797543357652, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763018797543357652, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347873515258208904, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347873515258208904, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7508823676230273446, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
         type: 3}
       propertyPath: playerRigidBody
       value: 
       objectReference: {fileID: 629375439}
+    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 371059181}
+    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 371059181}
+    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: vignetteIntensityNormal
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614190205318473562, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: vignetteIntensityTimeSlow
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -344,7 +388,7 @@ PrefabInstance:
         type: 3}
       propertyPath: deathMenu
       value: 
-      objectReference: {fileID: 426980}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

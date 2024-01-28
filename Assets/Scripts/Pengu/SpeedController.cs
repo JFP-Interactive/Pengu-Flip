@@ -54,7 +54,6 @@ public class SpeedController : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Die");
         HighScoreManager.instance.SetHighScore();
         Time.timeScale = 0f;
         ingameUI.SetActive(false);

@@ -44,7 +44,6 @@ public class HighScoreManager : MonoBehaviour
         currentTotalScore = currentWayScore + currentFishScore;
         scoreText.text = currentTotalScore.ToString();
         scoreText2.text = currentTotalScore.ToString();
-        Debug.Log(highScore);
     }
 
     public void SetHighScore()
