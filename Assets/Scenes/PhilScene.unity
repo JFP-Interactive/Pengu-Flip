@@ -290,11 +290,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pengu
       objectReference: {fileID: 0}
-    - target: {fileID: 8443369974564130637, guid: 31468bde0ef511d4ea1ceb4c2fe27a5e,
-        type: 3}
-      propertyPath: obstacles.Array.data[6].priority
-      value: 800
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -407,6 +402,36 @@ PrefabInstance:
     - target: {fileID: 4008996540736248738, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404331475925028607, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404331475925028607, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763018797543357652, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763018797543357652, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347873515258208904, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347873515258208904, guid: bb6ae628d25df9245bfcdb7adf5ab6f5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
