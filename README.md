@@ -16,6 +16,6 @@ Controls Overview:
 ALL ASSETS WHERE MADE IN 48 HOURS FOR THE GLOBAL GAME JAM:)
 
 ## Made by
-Felix Beinßen
-Jason Labrenz
-Philipp Irmscher
+- Felix Beinßen
+- Jason Labrenz
+- Philipp Irmscher
